@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--Meta tags-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0 ,user-scalable=no">
+
+    <!--Title-->
+    <title>Notes Marketplace</title>
+
+    <!--Fevicon-->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!--Font-Awesome-->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+    <!--Custom css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body class="sticky-header">
+
+    <!--header -->
+    <header class="site-header">
+        <div class="container column-padding-remover">
+            <div class="header-wrapper">
+                <div class="logo-wrapper">
+                    <a class="navbar-brand" href="home-page.html"><img src="images/blue-logo.png" alt="logo"></a>
+                    <!--Mobile Open Button-->
+                    <span id="mobile-nav-open-btn">&#9776;</span>
+                </div>
+                <div class="navigation-wrapper">
+                    <nav class="main-nav navbar navbar-expand-md">
+                        <div class="collapse navbar-collapse">
+                            <ul class="menu-navigation">
+                                <li><a href="search-note-page.html">Search Notes</a></li>
+                                <li><a href="my-sold-notes-page.html">Sell Your Notes</a></li>
+                                <li><a href="faq-page.html">FAQ</a></li>
+                                <li><a href="contact-us-page.html">Contact Us</a></li>
+                                <li class="dropdown">
+                                    <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <img src="images/user-img.png" alt="user" class="img-fluid">
+                                    </a>
+                                    <div class="dropdown-menu shadow-drop dropdowncustom"
+                                        aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="user-profile-page.html">
+                                            <h6>My Profile</h6>
+                                        </a>
+                                        <a class="dropdown-item" href="my-downloads-page.html">
+                                            <h6>My Downloads</h6>
+                                        </a>
+                                        <a class="dropdown-item" href="my-sold-notes-page.html">
+                                            <h6>My Sold Notes</h6>
+                                        </a>
+                                        <a class="dropdown-item" href="my-rejected-notes-page .html">
+                                            <h6>My Rejected Notes</h6>
+                                        </a>
+                                        <a class="dropdown-item" href="change-password-page.html">
+                                            <h6>Change Password</h6>
+                                        </a>
+                                        <a class="dropdown-item pur_col" href="log-in-page.html">
+                                            <h5>LOGOUT</h5>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li><a href="log-in-page.html">
+                                        <button type="button" class="btn btn-purple btn-outline-primary">Logout</button>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <!--for Mobile Menu-->
+                <div id="mobile-nav">
+                    <!--Mobile Close Button-->
+                    <span id="mobile-nav-close-btn">&times;</span>
+                    <div id="mobile-nav-content">
+                        <ul class="menu-navigation">
+                            <div class="clickable-op">
+                                <li><a href="search-note-page.html">Search Notes</a></li>
+                                <li><a href="my-sold-notes-page.html">Sell Your Notes</a></li>
+                                <li><a href="faq-page.html">FAQ</a></li>
+                                <li><a href="contact-us-page.html">Contact Us</a></li>
+                            </div>
+                            <li class="dropdown">
+                                <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <img src="images/user-img.png" alt="user" class="img-fluid">
+                                </a>
+                                <div class="dropdown-menu shadow-drop dropdowncustom" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="user-profile-page.html">
+                                        <h6>My Profile</h6>
+                                    </a>
+                                    <a class="dropdown-item" href="my-downloads-page.html">
+                                        <h6>My Downloads</h6>
+                                    </a>
+                                    <a class="dropdown-item" href="my-sold-notes-page.html">
+                                        <h6>My Sold Notes</h6>
+                                    </a>
+                                    <a class="dropdown-item" href="my-rejected-notes-page .html">
+                                        <h6>My Rejected Notes</h6>
+                                    </a>
+                                    <a class="dropdown-item" href="change-password-page.html">
+                                        <h6>Change Password</h6>
+                                    </a>
+                                    <a class="dropdown-item" href="log-in-page.html">
+                                        <h5>LOGOUT</h5>
+                                    </a>
+                                </div>
+                            </li>
+                            <li><a href="log-in-page.html">
+                                    <button type="button" class="btn btn-purple btn-outline-primary">Logout</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+
+
+    <div id="search-all-font">
+        <div id="search-top-img">
+            <img src="images/banner-with-overlay-user-profile.jpg" alt="Banner image" class="img-fluid">
+            <div id="search-home-heading" class="text-center">
+                <h3 class="heading-margin">Add Notes</h3>
+            </div>
+        </div>
+        <div id="add-notes-heading">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="blue-font-34">Basic Note Details</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Title *</label>
+                                <input type="text" class="form-control input-light-color"
+                                    placeholder="Enter your notes title">
+                            </div>
+                            <div class="form-group col-md-6 add-notes-length-restorer">
+                                <label class="right-content">Category *</label>
+                                <select class="form-control input-light-color options-arrow-down right-content">
+                                    <option selected disabled>Select your Category</option>
+                                    <option>Science</option>
+                                    <option>Arts</option>
+                                    <option>Bio</option>
+                                    <option>Maths</option>
+                                    <option>Chemistry</option>
+                                    <option>Physics</option>
+                                    <option>Commerce</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Display Picture</label>
+                                <div class="user-profile-photo-uploader">
+                                    <label for="upload-file"><img src="images/upload-file.png"
+                                            title="Click here to Display your note Picture"
+                                            alt="Upload your photo here"></label>
+                                    <input id="upload-file" class="form-control input-light-color" type="file">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="right-content">Upload Notes *</label>
+                                <div class="user-profile-photo-uploader right-content">
+                                    <label for="upload-note"><img style="height: 46px;" src="images/upload-note.png"
+                                            class="right-content" title="Click here to upload your Notes"
+                                            alt="Upload your photo here"></label>
+                                    <input id="upload-note" class="form-control right-content input-light-color"
+                                        type="file">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Type</label>
+                                <select class="form-control options-arrow-down input-light-color">
+                                    <option selected disabled>Select your note type</option>
+                                    <option>Free</option>
+                                    <option>Paid</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6 add-notes-length-restorer">
+                                <label class="right-content">Number of Pages</label>
+                                <input type="number" class="form-control right-content input-light-color"
+                                    placeholder="Enter number of note pages">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Description *</label>
+                                <textarea id="add-notes-des-form" placeholder="Enter your description"
+                                    class="form-control input-light-color"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="form-heading-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        Institution Information
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Institution Information form -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Country</label>
+                            <select class="form-control options-arrow-down input-light-color ">
+                                <option selected disabled>Select your country</option>
+                                <option>India</option>
+                                <option>Japan</option>
+                                <option>USA</option>
+                                <option>China</option>
+                                <option>Canada</option>
+                                <option>Australia</option>
+                                <option>Pakistan</option>
+                                <option>Tajikistan</option>
+                                <option>Taiwan</option>
+                                <option>Switzerland</option>
+                                <option>Sri Lanka</option>
+                                <option>North Korea</option>
+                                <option>South Korea</option>
+                                <option>Philippines</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 add-notes-length-restorer">
+                            <label class="right-content">Institution Name</label>
+                            <input type="text" class="form-control right-content input-light-color"
+                                placeholder="Enter your Institution Name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="form-heading-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        Course Details
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Details form -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Course Name</label>
+                            <input type="text" class="form-control input-light-color"
+                                placeholder="Enter your Course Name">
+                        </div>
+                        <div class="form-group col-md-6 add-notes-length-restorer">
+                            <label class="right-content">Course Code</label>
+                            <input type="text" class="form-control right-content input-light-color"
+                                placeholder="Enter your Course Code">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Professor / Lecturer Name</label>
+                            <input type="text" class="form-control input-light-color"
+                                placeholder="Enter your Professor Name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="form-heading-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        Selling Information
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selling Information form -->
+        <div id="add-note-sell-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Sell For *</label>
+                                <div id="add-notes-radio-merger">
+                                    <div class="form-check">
+                                        <div style="display:inline-flex;">
+                                            <input class="form-check-input" type="radio" name="Sell-for"
+                                                id="exampleRadios1" value="free" checked>
+                                            <label class="form-check-label" for="exampleRadios1">Free</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Sell-for" id="exampleRadios2"
+                                            value="paid">
+                                        <label class="form-check-label" for="exampleRadios2">Paid</label>
+                                    </div>
+                                </div>
+                                <div id="add-note-sell-price">
+                                    <label>Sell price *</label>
+                                    <input type="number" class="form-control input-light-color"
+                                        placeholder="Enter your Price">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="right-content">Note Preview</label>
+                                <div id="note-preview-res"
+                                    class="user-profile-photo-uploader right-content notes-preview-uploader">
+                                    <label for="note-preview"><img src="images/upload-file.png"
+                                            title="Click here to upload your photo"
+                                            alt="Upload your Preview here"></label>
+                                    <input id="note-preview" class="form-control input-light-color" type="file">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="add-notes-buttons">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn-primary btn blue-button-hover-white">save</button>
+                        <button class="btn-primary btn blue-button-hover-white">publish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--footer-->
+        <footer>
+            <div id="footer">
+                <hr>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Copyright &#169; <a href="https://www.tatvasoft.com/"
+                                    title="TatvaSoft-click here for more info">TatvaSoft </a> All rights reserved.
+                            </h3>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="footer-social-list">
+                                <li><a href="https://www.facebook.com/TatvaSoft/"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li><a href="https://twitter.com/tatvasoft?s=20"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li><a href="https://www.linkedin.com/company/tatvasoft"><i
+                                            class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer end-->
+    </div>
+
+    
+    <!--popper js-->
+    <script src="js/popper/popper.min.js"></script>
+
+    <!--jquery js-->
+    <script src="js/jquery/jquery.min.js"></script>
+
+    <!--bootstrap js-->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <!--Custom Script-->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
