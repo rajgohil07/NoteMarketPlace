@@ -197,9 +197,9 @@ if (isset($_POST['search_1'])) {
                                         <td>$refe_data</td>";
                                         if ($refe_data == 'Draft') {
                                             echo " <td>
-                                            <a href='http://localhost/NotesMarketPlace/front/delete_draft.php?id=$noteid'>
+                                            <a href='delete_draft.php?id=$noteid'>
                                             <img src='images/delete.png' title='Click to delete' alt='Delete'></a>
-                                            <a href='http://localhost/NotesMarketPlace/front/add-notes-page.php?id=$noteid'>
+                                            <a href='add-notes-page.php?id=$noteid'>
                                             <img src='images/edit.png' title='Click to Edit' alt='edit'></a>
                                         </td>
                                     </tr>";
