@@ -11,7 +11,7 @@
                   <nav class="main-nav navbar navbar-expand-md">
                       <div class="collapse navbar-collapse">
                           <ul class="menu-navigation">
-                              <li><a href="dashboard-page.html">Dashboard</a></li>
+                              <li><a href="dashboard-page.php">Dashboard</a></li>
                               <li class="dropdown">
                                   <a href="" role="button" data-toggle="dropdown" aria-haspopup="true"
                                       aria-expanded="false">
@@ -19,21 +19,21 @@
                                   </a>
                                   <div class="dropdown-menu shadow-drop dropdowncustom"
                                       aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="notes-under-preview-page.html">
+                                      <a class="dropdown-item" href="notes-under-preview-page.php">
                                           <h6>Notes Under Review</h6>
                                       </a>
-                                      <a class="dropdown-item" href="published-notes-page.html">
+                                      <a class="dropdown-item" href="published-notes-page.php">
                                           <h6>Published Notes</h6>
                                       </a>
-                                      <a class="dropdown-item" href="downloaded-notes-page.html">
+                                      <a class="dropdown-item" href="downloaded-notes-page.php">
                                           <h6>Downloaded Notes</h6>
                                       </a>
-                                      <a class="dropdown-item" href="rejected-notes-page.html">
+                                      <a class="dropdown-item" href="rejected-notes-page.php">
                                           <h6>Rejected Notes</h6>
                                       </a>
                                   </div>
                               </li>
-                              <li><a href="member-details-page.html">Members</a></li>
+                              <li><a href="member-details-page.php">Members</a></li>
                               <li class="dropdown">
                                   <a href="" role="button" data-toggle="dropdown" aria-haspopup="true"
                                       aria-expanded="false">
@@ -41,12 +41,12 @@
                                   </a>
                                   <div class="dropdown-menu shadow-drop dropdowncustom"
                                       aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="spam-report-page.html">
+                                      <a class="dropdown-item" href="spam-report-page.php">
                                           <h5>Spam Reports</h5>
                                       </a>
                                   </div>
                               </li>
-                              <li><a href="my-profile-page.html">Settings</a></li>
+                              <li><a href="my-profile-page.php">Settings</a></li>
                               <li class="dropdown">
                                   <a href="" role="button" data-toggle="dropdown" aria-haspopup="true"
                                       aria-expanded="false">
@@ -54,18 +54,18 @@
                                   </a>
                                   <div class="dropdown-menu shadow-drop dropdowncustom"
                                       aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="my-profile-page.html">
+                                      <a class="dropdown-item" href="my-profile-page.php">
                                           <h6>Update Profile</h6>
                                       </a>
                                       <a class="dropdown-item" href="#">
                                           <h6>Change Password</h6>
                                       </a>
-                                      <a class="dropdown-item" href="log-in-page.html">
+                                      <a class="dropdown-item" href="log-in-page.php">
                                           <h5>LOGOUT</h5>
                                       </a>
                                   </div>
                               </li>
-                              <li><a href="log-in-page.html">
+                              <li><a href="log-in-page.php">
                                       <button type="button" class="btn btn-purple btn-outline-primary">Logout</button>
                                   </a></li>
                           </ul>
@@ -79,58 +79,58 @@
                   <span id="mobile-nav-close-btn">&times;</span>
                   <div id="mobile-nav-content">
                       <ul class="menu-navigation">
-                          <li><a href="dashboard-page.html">Dashboard</a></li>
+                          <li><a href="dashboard-page.php">Dashboard</a></li>
                           <li class="dropdown">
                               <a href="" role="button" data-toggle="dropdown" aria-haspopup="true"
                                   aria-expanded="false">
                                   Notes
                               </a>
                               <div class="dropdown-menu shadow-drop dropdowncustom" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="notes-under-preview-page.html">
+                                  <a class="dropdown-item" href="notes-under-preview-page.php">
                                       <h6>Notes Under Review</h6>
                                   </a>
-                                  <a class="dropdown-item" href="published-notes-page.html">
+                                  <a class="dropdown-item" href="published-notes-page.php">
                                       <h6>Published Notes</h6>
                                   </a>
-                                  <a class="dropdown-item" href="downloaded-notes-page.html">
+                                  <a class="dropdown-item" href="downloaded-notes-page.php">
                                       <h6>Downloaded Notes</h6>
                                   </a>
-                                  <a class="dropdown-item" href="rejected-notes-page.html">
+                                  <a class="dropdown-item" href="rejected-notes-page.php">
                                       <h6>Rejected Notes</h6>
                                   </a>
                               </div>
                           </li>
-                          <li><a href="member-details-page.html">Members</a></li>
+                          <li><a href="member-details-page.php">Members</a></li>
                           <li class="dropdown">
                               <a href="" role="button" data-toggle="dropdown" aria-haspopup="true"
                                   aria-expanded="false">
                                   Reports
                               </a>
                               <div class="dropdown-menu shadow-drop dropdowncustom" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="spam-report-page.html">
+                                  <a class="dropdown-item" href="spam-report-page.php">
                                       <h5>Spam Reports</h5>
                                   </a>
                               </div>
                           </li>
-                          <li><a href="my-profile-page.html">Settings</a></li>
+                          <li><a href="my-profile-page.php">Settings</a></li>
                           <li class="dropdown">
                               <a href="" role="button" data-toggle="dropdown" aria-haspopup="true"
                                   aria-expanded="false">
                                   <img src="images/user-img.png" alt="user" class="img-fluid">
                               </a>
                               <div class="dropdown-menu shadow-drop dropdowncustom" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="my-profile-page.html">
+                                  <a class="dropdown-item" href="my-profile-page.php">
                                       <h6>Update Profile</h6>
                                   </a>
-                                  <a class="dropdown-item" href="my-profile-page.html">
+                                  <a class="dropdown-item" href="my-profile-page.php">
                                       <h6>Change Password</h6>
                                   </a>
-                                  <a class="dropdown-item" href="log-in-page.html">
+                                  <a class="dropdown-item" href="log-in-page.php">
                                       <h5>LOGOUT</h5>
                                   </a>
                               </div>
                           </li>
-                          <li><a href="log-in-page.html">
+                          <li><a href="log-in-page.php">
                                   <button type="button" class="btn btn-purple btn-outline-primary">Logout</button>
                               </a>
                           </li>
