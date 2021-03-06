@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2021 at 07:12 PM
+-- Generation Time: Mar 06, 2021 at 05:58 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -229,31 +229,31 @@ CREATE TABLE `sellernotes` (
 --
 
 INSERT INTO `sellernotes` (`noteid`, `sellerid`, `status`, `actionedby`, `admin_remarks`, `publisheddate`, `title`, `category`, `displaypic`, `notetype`, `page_no`, `description`, `university_name`, `country`, `course`, `course_code`, `proffesor`, `ispaid`, `selling_price`, `notespreview`, `createddate`, `createdby`, `modifieddate`, `modifiedby`, `isactive`) VALUES
-(1, 16, 3, NULL, NULL, '2021-03-05 21:01:29', 'science 7', 4, '../Members/16/1/DP_1614958289.png', 2, 217, 'sciendce book', 'tatvasoft house Institution ', 2, 'comp', '2983WNQ', 'Vijay Vaishnav', 1, '21.45', '../Members/16/1/Preview_1614958289.jpg', '2021-03-05 21:01:29', 16, NULL, NULL, b'1'),
-(2, 16, 6, NULL, NULL, '2021-03-05 21:04:16', 'science 10', 2, '../Members/default/DP_default.jpg', 2, 217, 'sciendce book', 'tatvasoft house Institution ', 2, 'comp ce', '2983WNQ', 'Vijay Vaishnav', 1, '21.45', NULL, '2021-03-05 21:04:16', 16, NULL, NULL, b'1'),
-(3, 16, 5, NULL, NULL, '2021-03-05 21:05:43', 'science today now', 3, '../Members/default/DP_default.jpg', 2, 214, 'About php', 'chandan', 3, 'php', '329NLW', 'Vijay Vaishnav', 2, '0.00', NULL, '2021-03-05 21:05:43', 16, NULL, NULL, b'1'),
-(4, 16, 3, NULL, NULL, '2021-03-05 21:09:49', 'science 10', 2, '../Members/default/DP_default.jpg', 1, 217, 'sciendce book 3', 'tatvasoft house Institution ', 2, 'comp ce', '2983WNQ', 'Vijay Vaishnav', 1, '21.45', NULL, '2021-03-05 21:09:49', 16, NULL, NULL, b'1'),
-(5, 16, 6, NULL, NULL, '2021-03-05 21:10:27', 'title 2', 2, '../Members/default/DP_default.jpg', 2, 42, 'lorem', 'ac', 3, 'nanana', '999', 'Vijay Vaishnav', 1, '21.10', NULL, '2021-03-05 21:10:27', 16, NULL, NULL, b'1'),
+(1, 16, 3, NULL, NULL, '2021-03-05 21:01:29', 'science 7', 4, '../Members/16/1/DP_1614958289.png', 2, 217, 'sciendce book', 'tatvasoft house Institution ', 2, 'comp', '2983WNQ', 'Vijay Vaishnav', 1, '21.45', '../Members/16/1/Preview_1614958289.jpg', '2021-03-05 21:01:29', 16, '2021-03-05 21:04:16', NULL, b'1'),
+(2, 16, 6, NULL, NULL, '2021-03-05 21:04:16', 'science 10', 2, '../Members/default/DP_default.jpg', 2, 217, 'sciendce book', 'tatvasoft house Institution ', 2, 'comp ce', '2983WNQ', 'Vijay Vaishnav', 1, '21.45', NULL, '2021-03-05 21:04:16', 16, '2021-03-05 21:04:16', NULL, b'1'),
+(3, 16, 5, NULL, NULL, '2021-03-05 21:05:43', 'science today now', 3, '../Members/default/DP_default.jpg', 2, 214, 'About php', 'chandan', 3, 'php', '329NLW', 'Vijay Vaishnav', 2, '0.00', NULL, '2021-03-05 21:05:43', 16, '2021-03-05 21:04:16', NULL, b'1'),
+(4, 16, 3, NULL, NULL, '2021-03-05 21:09:49', 'science 10', 2, '../Members/default/DP_default.jpg', 1, 217, 'sciendce book 3', 'tatvasoft house Institution ', 2, 'comp ce', '2983WNQ', 'Vijay Vaishnav', 1, '21.45', NULL, '2021-03-05 21:09:49', 16, '2021-03-05 21:10:27', NULL, b'1'),
+(5, 16, 6, NULL, NULL, '2021-03-05 21:10:27', 'title 2', 2, '../Members/default/DP_default.jpg', 2, 42, 'lorem', 'ac', 3, 'nanana', '999', 'Vijay Vaishnav', 1, '21.10', NULL, '2021-03-05 21:10:27', 16, '2021-03-05 21:10:27', NULL, b'1'),
 (6, 16, 3, NULL, NULL, '2021-03-05 21:10:40', 'title 2', 2, '../Members/default/DP_default.jpg', 2, 42, 'lorem', 'ac', 3, 'nanana', '999', 'Vijay Vaishnav', 1, '21.10', NULL, '2021-03-05 21:10:40', 16, NULL, NULL, b'1'),
 (7, 16, 6, NULL, NULL, '2021-03-05 21:10:46', 'title 2', 2, '../Members/default/DP_default.jpg', 2, 42, 'lorem', 'ac', 3, 'nanana', '999', 'Vijay Vaishnav', 1, '21.10', NULL, '2021-03-05 21:10:46', 16, NULL, NULL, b'1'),
-(8, 16, 3, NULL, NULL, '2021-03-05 21:11:19', 'science', 3, '../Members/default/DP_default.jpg', 3, 319, 'lorem', 'sparsh', 4, 'nanana', '999', 'mahesh', 1, '21.10', NULL, '2021-03-05 21:11:19', 16, NULL, NULL, b'1'),
-(9, 16, 3, NULL, NULL, '2021-03-05 21:11:25', 'science', 3, '../Members/default/DP_default.jpg', 3, 319, 'lorem', 'sparsh', 4, 'nanana', '999', 'mahesh', 1, '21.10', NULL, '2021-03-05 21:11:25', 16, NULL, NULL, b'1'),
-(10, 16, 6, NULL, NULL, '2021-03-05 21:12:15', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:15', 16, NULL, NULL, b'1'),
-(11, 16, 6, NULL, NULL, '2021-03-05 21:12:20', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:20', 16, NULL, NULL, b'1'),
-(12, 16, 3, NULL, NULL, '2021-03-05 21:12:24', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:24', 16, NULL, NULL, b'1'),
-(13, 16, 6, NULL, NULL, '2021-03-05 21:12:30', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:30', 16, NULL, NULL, b'1'),
+(8, 16, 3, NULL, NULL, '2021-03-05 21:11:19', 'science', 3, '../Members/default/DP_default.jpg', 3, 319, 'lorem', 'sparsh', 4, 'nanana', '999', 'mahesh', 1, '21.10', NULL, '2021-03-05 21:11:19', 16, '2021-03-05 21:10:27', NULL, b'1'),
+(9, 16, 3, NULL, NULL, '2021-03-05 21:11:25', 'science', 3, '../Members/default/DP_default.jpg', 3, 319, 'lorem', 'sparsh', 4, 'nanana', '999', 'mahesh', 1, '21.10', NULL, '2021-03-05 21:11:25', 16, '2021-03-05 21:10:27', NULL, b'1'),
+(10, 16, 6, NULL, NULL, '2021-03-05 21:12:15', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:15', 16, '2021-03-05 21:10:27', NULL, b'1'),
+(11, 16, 6, NULL, NULL, '2021-03-05 21:12:20', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:20', 16, '2021-03-05 21:12:20', NULL, b'1'),
+(12, 16, 3, NULL, NULL, '2021-03-05 21:12:24', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:24', 16, '2021-03-05 21:12:20', NULL, b'1'),
+(13, 16, 6, NULL, NULL, '2021-03-05 21:12:30', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:30', 16, '2021-03-05 22:16:27', NULL, b'1'),
 (14, 16, 4, NULL, NULL, '2021-03-05 21:12:34', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:34', 16, NULL, NULL, b'1'),
-(15, 16, 5, NULL, NULL, '2021-03-05 21:12:39', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:39', 16, NULL, NULL, b'1'),
-(16, 16, 6, NULL, NULL, '2021-03-05 21:13:49', 'history', 3, '../Members/default/DP_default.jpg', 1, 98, 'description here', 'mahindra', 4, 'crash course', '3920NLWK', 'sohil gambhir', 1, '91.12', NULL, '2021-03-05 21:13:49', 16, NULL, NULL, b'1'),
-(17, 16, 5, NULL, NULL, '2021-03-05 21:13:55', 'history', 3, '../Members/default/DP_default.jpg', 1, 98, 'description here', 'mahindra', 4, 'crash course', '3920NLWK', 'sohil gambhir', 1, '91.12', NULL, '2021-03-05 21:13:55', 16, NULL, NULL, b'1'),
-(18, 16, 5, NULL, NULL, '2021-03-05 21:14:02', 'history', 3, '../Members/default/DP_default.jpg', 1, 98, 'description here', 'mahindra', 4, 'crash course', '3920NLWK', 'sohil gambhir', 1, '91.12', NULL, '2021-03-05 21:14:02', 16, NULL, NULL, b'1'),
-(19, 16, 6, NULL, NULL, '2021-03-05 21:14:07', 'history', 3, '../Members/default/DP_default.jpg', 1, 98, 'description here', 'mahindra', 4, 'crash course', '3920NLWK', 'sohil gambhir', 1, '91.12', NULL, '2021-03-05 21:14:07', 16, NULL, NULL, b'1'),
-(20, 16, 3, NULL, NULL, '2021-03-05 21:14:13', 'history', 3, '../Members/default/DP_default.jpg', 1, 98, 'description here', 'mahindra', 4, 'crash course', '3920NLWK', 'sohil gambhir', 1, '91.12', NULL, '2021-03-05 21:14:13', 16, NULL, NULL, b'1'),
-(21, 16, 4, NULL, NULL, '2021-03-05 21:15:35', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:15:35', 16, NULL, NULL, b'1'),
-(22, 16, 5, NULL, NULL, '2021-03-05 21:15:41', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:15:41', 16, NULL, NULL, b'1'),
-(23, 16, 6, NULL, NULL, '2021-03-05 21:15:48', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:15:48', 16, NULL, NULL, b'1'),
-(24, 16, 3, NULL, NULL, '2021-03-05 21:15:54', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:15:54', 16, NULL, NULL, b'1'),
-(25, 16, 6, NULL, NULL, '2021-03-05 21:16:00', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:16:00', 16, NULL, NULL, b'1'),
+(15, 16, 5, NULL, NULL, '2021-03-05 21:12:39', 'maths', 1, '../Members/default/DP_default.jpg', 2, 331, 'lorem lorem', 'machine', 2, 'java', '29u3KAN', 'prajapati rahul', 2, '0.00', NULL, '2021-03-05 21:12:39', 16, '2021-03-05 21:10:27', NULL, b'1'),
+(16, 16, 6, NULL, NULL, '2021-03-05 21:13:49', 'history', 3, '../Members/default/DP_default.jpg', 1, 98, 'description here', 'mahindra', 4, 'crash course', '3920NLWK', 'sohil gambhir', 1, '91.12', NULL, '2021-03-05 21:13:49', 16, '2021-03-05 21:15:35', NULL, b'1'),
+(17, 16, 5, NULL, NULL, '2021-03-05 21:13:55', 'history', 3, '../Members/default/DP_default.jpg', 1, 98, 'description here', 'mahindra', 4, 'crash course', '3920NLWK', 'sohil gambhir', 1, '91.12', NULL, '2021-03-05 21:13:55', 16, '2021-03-05 21:15:35', NULL, b'1'),
+(18, 16, 5, NULL, NULL, '2021-03-05 21:14:02', 'history', 3, '../Members/default/DP_default.jpg', 1, 98, 'description here', 'mahindra', 4, 'crash course', '3920NLWK', 'sohil gambhir', 1, '91.12', NULL, '2021-03-05 21:14:02', 16, '2021-03-05 21:15:35', NULL, b'1'),
+(19, 16, 6, NULL, NULL, '2021-03-05 21:14:07', 'history', 3, '../Members/default/DP_default.jpg', 1, 98, 'description here', 'mahindra', 4, 'crash course', '3920NLWK', 'sohil gambhir', 1, '91.12', NULL, '2021-03-05 21:14:07', 16, '2021-03-05 21:15:35', NULL, b'1'),
+(20, 16, 3, NULL, NULL, '2021-03-05 21:14:13', 'history', 3, '../Members/default/DP_default.jpg', 1, 98, 'description here', 'mahindra', 4, 'crash course', '3920NLWK', 'sohil gambhir', 1, '91.12', NULL, '2021-03-05 21:14:13', 16, '2021-03-05 21:15:35', NULL, b'1'),
+(21, 16, 4, NULL, NULL, '2021-03-05 21:15:35', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:15:35', 16, '2021-03-05 21:15:35', NULL, b'1'),
+(22, 16, 5, NULL, NULL, '2021-03-05 21:15:41', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:15:41', 16, '2021-03-05 21:15:54', NULL, b'1'),
+(23, 16, 6, NULL, NULL, '2021-03-05 21:15:48', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:15:48', 16, '2021-03-05 21:15:54', NULL, b'1'),
+(24, 16, 3, NULL, NULL, '2021-03-05 21:15:54', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:15:54', 16, '2021-03-05 21:15:54', NULL, b'1'),
+(25, 16, 6, NULL, NULL, '2021-03-05 21:16:00', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:16:00', 16, '2021-03-05 21:15:54', NULL, b'1'),
 (26, 16, 6, NULL, NULL, '2021-03-05 21:16:07', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:16:07', 16, NULL, NULL, b'1'),
 (27, 16, 3, NULL, NULL, '2021-03-05 21:16:12', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:16:12', 16, NULL, NULL, b'1'),
 (28, 16, 5, NULL, NULL, '2021-03-05 21:16:17', 'socials', 2, '../Members/default/DP_default.jpg', 2, 219, 'description here now', 'mahindra', 2, 'crash course couse', '542FSSA', 'rathod janvi', 2, '0.00', NULL, '2021-03-05 21:16:17', 16, NULL, NULL, b'1'),
@@ -645,15 +645,6 @@ ALTER TABLE `users`
 --
 
 --
--- Constraints for table `downloads`
---
-ALTER TABLE `downloads`
-  ADD CONSTRAINT `downloads_ibfk_1` FOREIGN KEY (`noteid`) REFERENCES `sellernotes` (`noteid`),
-  ADD CONSTRAINT `downloads_ibfk_2` FOREIGN KEY (`seller`) REFERENCES `users` (`userid`),
-  ADD CONSTRAINT `downloads_ibfk_3` FOREIGN KEY (`downloader`) REFERENCES `users` (`userid`),
-  ADD CONSTRAINT `downloads_ibfk_4` FOREIGN KEY (`ispaid`) REFERENCES `referencedata` (`refdataid`);
-
---
 -- Constraints for table `sellernotes`
 --
 ALTER TABLE `sellernotes`
@@ -664,43 +655,6 @@ ALTER TABLE `sellernotes`
   ADD CONSTRAINT `sellernotes_ibfk_5` FOREIGN KEY (`notetype`) REFERENCES `notetypes` (`typeid`),
   ADD CONSTRAINT `sellernotes_ibfk_6` FOREIGN KEY (`country`) REFERENCES `countries` (`countryid`),
   ADD CONSTRAINT `sellernotes_ibfk_7` FOREIGN KEY (`ispaid`) REFERENCES `referencedata` (`refdataid`);
-
---
--- Constraints for table `sellernotesattachements`
---
-ALTER TABLE `sellernotesattachements`
-  ADD CONSTRAINT `sellernotesattachements_ibfk_1` FOREIGN KEY (`noteid`) REFERENCES `sellernotes` (`noteid`);
-
---
--- Constraints for table `sellernotesreportedissues`
---
-ALTER TABLE `sellernotesreportedissues`
-  ADD CONSTRAINT `sellernotesreportedissues_ibfk_1` FOREIGN KEY (`noteid`) REFERENCES `sellernotes` (`noteid`),
-  ADD CONSTRAINT `sellernotesreportedissues_ibfk_2` FOREIGN KEY (`reprotedbyid`) REFERENCES `users` (`userid`),
-  ADD CONSTRAINT `sellernotesreportedissues_ibfk_3` FOREIGN KEY (`againstdownloadid`) REFERENCES `downloads` (`downloadid`);
-
---
--- Constraints for table `sellernotesreview`
---
-ALTER TABLE `sellernotesreview`
-  ADD CONSTRAINT `sellernotesreview_ibfk_1` FOREIGN KEY (`noteid`) REFERENCES `sellernotes` (`noteid`),
-  ADD CONSTRAINT `sellernotesreview_ibfk_2` FOREIGN KEY (`reviewer_id`) REFERENCES `users` (`userid`),
-  ADD CONSTRAINT `sellernotesreview_ibfk_3` FOREIGN KEY (`againstdownloadsid`) REFERENCES `downloads` (`downloadid`);
-
---
--- Constraints for table `userprofile`
---
-ALTER TABLE `userprofile`
-  ADD CONSTRAINT `userprofile_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`),
-  ADD CONSTRAINT `userprofile_ibfk_2` FOREIGN KEY (`gender`) REFERENCES `referencedata` (`refdataid`),
-  ADD CONSTRAINT `userprofile_ibfk_3` FOREIGN KEY (`phone_country_code`) REFERENCES `countries` (`countryid`),
-  ADD CONSTRAINT `userprofile_ibfk_4` FOREIGN KEY (`country`) REFERENCES `countries` (`countryid`);
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roleid`) REFERENCES `userroles` (`roleid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
