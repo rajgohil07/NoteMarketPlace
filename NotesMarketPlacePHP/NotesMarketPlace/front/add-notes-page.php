@@ -3,6 +3,7 @@ include "db.php";
 session_start();
 
 if (isset($_SESSION['email'])) {
+
     //for Pubhlish purpose define all variables as null
     $title = "";
     $categories = "";
@@ -16,11 +17,7 @@ if (isset($_SESSION['email'])) {
     $professor_name = "";
     $sell_type = "";
     $sell_price = "";
-    $categories_id = "";
-    $countries_id = "";
-    $sell_type_new = "";
-    $publish_note_id = "";
-
+    $category = "";
 
     //session to get seller id
     $email = $_SESSION['email'];
@@ -36,6 +33,7 @@ if (isset($_SESSION['email'])) {
     $valid_format_3 = true;
 
     if (isset($_POST['save'])) {
+
         $title = $_POST['title'];
         $category = $_POST['category'];
         $type = $_POST['type'];
@@ -50,12 +48,12 @@ if (isset($_SESSION['email'])) {
         $sell_price = $_POST['sell_price'];
         $default_display_pic = "../Members/default/DP_default.jpg";
 
-        $query_insert = "INSERT INTO sellernotes( sellerid, status,publisheddate, title, category,displaypic,
+        $query_insert = "INSERT INTO sellernotes( sellerid, status, title, category,displaypic,
                      notetype,page_no, description,university_name, country, course, 
-                     course_code, proffesor,ispaid, selling_price, createddate,createdby,isactive) VALUES 
-                     ($seller_id,3,NOW(),'$title',$category,'$default_display_pic',$type,$note_pages,
+                     course_code, proffesor,ispaid, selling_price, createddate,createdby,modifieddate,isactive) VALUES 
+                     ($seller_id,3,'$title',$category,'$default_display_pic',$type,$note_pages,
                      '$description', '$institute_name',$country,'$course_name','$course_code',
-                     '$professor_name',$sell_type,'$sell_price',NOW(),$seller_id,1)";
+                     '$professor_name',$sell_type,'$sell_price',NOW(),$seller_id,NOW(),1)";
 
         $result_insert = mysqli_query($con, $query_insert);
 
@@ -82,9 +80,6 @@ if (isset($_SESSION['email'])) {
             if (!is_dir("../Members/" . $seller_id . "/" . $note_id)) {
                 mkdir('../Members/' . $seller_id . '/' . $note_id);
             }
-            // mkdir('../Members/');
-            // mkdir('../Members/' . $seller_id);
-            // mkdir('../Members/' . $seller_id . '/' . $note_id);
             $destinationfile = '../Members/' . $seller_id . '/' . $note_id . '/' . "DP_" . time() . '.' . $filecheck;
             move_uploaded_file($filetmp, $destinationfile);
             $query_pic = "UPDATE sellernotes SET displaypic='$destinationfile' WHERE noteid=$note_id";
@@ -171,6 +166,9 @@ if (isset($_SESSION['email'])) {
 
         while ($row = mysqli_fetch_assoc($fetch_detail)) {
 
+            $categories_id = "";
+            $countries_id = "";
+            $sell_type_new = "";
             $title = $row['title'];
             $categories_id = $row['category'];
             $type = $row['notetype'];
@@ -201,28 +199,56 @@ if (isset($_SESSION['email'])) {
         }
     }
 
-    if (isset($_POST['save'])) {
-        $query_insert_save = "UPDATE sellernotes SET publisheddate=NOW(),title=$title,category=$categories_id
-                                  notetype=$type,page_no=$note_pages,description=$description,
-                                  university_name=$institute_name,country=$countries_id,course=$course_name,
-                                  course_code=$course_code,proffesor=$professor_name,ispaid=$sell_type_new,
-                                  selling_price=sell_price,modifieddate=NOW(),modifiedby=$seller_id 
-                                  WHERE noteid =$publish_note_id";
+    if (isset($_POST['save2'])) {
+
+        $dashboard_noteid = $_POST['id_getter'];
+        $title = $_POST['title'];
+        $category = $_POST['category'];
+        $type = $_POST['type'];
+        $note_pages = $_POST['no_of_page'];
+        $description = $_POST['description'];
+        $country = $_POST['country'];
+        $institute_name = $_POST['institute_name'];
+        $course_name = $_POST['course_name'];
+        $course_code = $_POST['course_code'];
+        $professor_name = $_POST['professor_name'];
+        $sell_type = $_POST['Sell-for'];
+        $sell_price = $_POST['sell_price'];
+
+        $query_insert_save = "UPDATE sellernotes SET title='$title',category=$category,
+                                  notetype=$type,page_no=$note_pages,description='$description',
+                                  university_name='$institute_name',country=$country,course='$course_name',
+                                  course_code='$course_code',proffesor='$professor_name',ispaid=$sell_type,
+                                  selling_price='$sell_price',modifieddate=NOW(),modifiedby=$seller_id 
+                                  WHERE noteid=$dashboard_noteid";
+
         $result_insert_save = mysqli_query($con, $query_insert_save);
         header('Location:dashboard-page.php');
     }
     if (isset($_POST['publish'])) {
 
-        $set_publish = mysqli_query($con, "UPDATE sellernotes SET status=6 WHERE noteid=$publish_note_id");
+        $dashboard_noteid = $_POST['id_getter'];
+        $title = $_POST['title'];
+        $category = $_POST['category'];
+        $type = $_POST['type'];
+        $note_pages = $_POST['no_of_page'];
+        $description = $_POST['description'];
+        $country = $_POST['country'];
+        $institute_name = $_POST['institute_name'];
+        $course_name = $_POST['course_name'];
+        $course_code = $_POST['course_code'];
+        $professor_name = $_POST['professor_name'];
+        $sell_type = $_POST['Sell-for'];
+        $sell_price = $_POST['sell_price'];
 
-        $query_insert_publish = "UPDATE sellernotes SET publisheddate=NOW(),title=$title,category=$categories_id,
-                                  notetype=$type,page_no=$note_pages,description=$description,
-                                  university_name=$institute_name,country=$countries_id,course=$course_name,
-                                  course_code=$course_code,proffesor=$professor_name,ispaid=$sell_type_new,
-                                  selling_price=sell_price,modifieddate=NOW(),modifiedby=$seller_id 
-                                  WHERE noteid =$publish_note_id";
-        $result_insert_publish = mysqli_query($con, $query_insert_publish);
+        $query_insert_publish = "UPDATE sellernotes SET status=6,publisheddate=NOW(),title='$title',category=$category,
+                                  notetype=$type,page_no=$note_pages,description='$description',
+                                  university_name='$institute_name',country=$country,course='$course_name',
+                                  course_code='$course_code',proffesor='$professor_name',ispaid=$sell_type,
+                                  selling_price='$sell_price',modifieddate=NOW(),modifiedby=$seller_id 
+                                  WHERE noteid=$dashboard_noteid";
 
+        $result_insert_pubhlish = mysqli_query($con, $query_insert_publish);
         header('Location:dashboard-page.php');
     }
 } else
@@ -296,7 +322,7 @@ if (isset($_SESSION['email'])) {
                             <div class="form-group col-md-6 add-notes-length-restorer">
                                 <label class="right-content">Category *</label>
                                 <select name="category"
-                                    class="form-control input-light-color options-arrow-down right-content">
+                                    class="form-control input-light-color options-arrow-down right-content" required>
                                     <?php
                                     if (isset($_GET['id'])) {
                                         echo "<option selected value='$categories_id'>$category_name</option>";
@@ -315,7 +341,7 @@ if (isset($_SESSION['email'])) {
                                     } else {
                                         $query_category = "SELECT name,categoryid FROM notecategories";
                                         $result_category = mysqli_query($con, $query_category);
-                                        echo "<option selected disabled>Select your Category</option>";
+                                        echo "<option value='' selected disabled>Select your Category</option>";
 
                                         while ($raw = mysqli_fetch_assoc($result_category)) {
                                             $categories = $raw['name'];
@@ -368,8 +394,8 @@ if (isset($_SESSION['email'])) {
                     <div class="col-md-12">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>Type</label>
-                                <select name="type" class="form-control options-arrow-down input-light-color">
+                                <label>Type *</label>
+                                <select name="type" class="form-control options-arrow-down input-light-color" required>
                                     <?php
                                     if (isset($_GET['id'])) {
                                         echo "<option selected value='$type'>$type_name</option>";
@@ -385,7 +411,7 @@ if (isset($_SESSION['email'])) {
                                                 echo " <option value='$type_id'>$types</option>";
                                         }
                                     } else {
-                                        echo "<option selected disabled>Select your note type</option>";
+                                        echo "<option value='' selected disabled>Select your note type</option>";
                                         $query_type = "SELECT name,typeid FROM notetypes";
                                         $result_type = mysqli_query($con, $query_type);
 
@@ -399,10 +425,10 @@ if (isset($_SESSION['email'])) {
                                 </select>
                             </div>
                             <div class="form-group col-md-6 add-notes-length-restorer">
-                                <label class="right-content">Number of Pages</label>
+                                <label class="right-content">Number of Pages *</label>
                                 <input name="no_of_page" type="number" value="<?php echo $note_pages ?>"
                                     class="form-control right-content input-light-color"
-                                    placeholder="Enter number of note pages">
+                                    placeholder="Enter number of note pages" required>
                             </div>
                         </div>
                     </div>
@@ -436,7 +462,8 @@ if (isset($_SESSION['email'])) {
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Country</label>
-                                <select name="country" class="form-control options-arrow-down input-light-color ">
+                                <select name="country" class="form-control options-arrow-down input-light-color"
+                                    required>
                                     <?php
                                     if (isset($_GET['id'])) {
                                         echo "<option selected value='$countries_id'>$country_name</option>";
@@ -452,7 +479,7 @@ if (isset($_SESSION['email'])) {
                                                 echo "<option value='$country_id'>$countries</option>";
                                         }
                                     } else {
-                                        echo "<option selected disabled>Select your country</option>";
+                                        echo "<option value='' selected disabled>Select your country</option>";
                                         $query_country = "SELECT name,countryid FROM countries";
                                         $result_country = mysqli_query($con, $query_country);
 
@@ -543,7 +570,7 @@ if (isset($_SESSION['email'])) {
                                                 while ($row = mysqli_fetch_assoc($result_note_mode)) {
                                                     $note_type = $row['refdataid'];
                                                     echo "<input class='form-check-input' type='radio' name='Sell-for'
-                                                id='exampleRadios1' value='$note_type'>";
+                                                id='exampleRadios1' value='$note_type' checked>";
                                                 }
                                             }
                                             ?>
@@ -599,14 +626,18 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
             </div>
-
+            <div class="getter-add-note">
+                <?php if (isset($_GET['id'])) {
+                    $temp_id = $_GET['id']; ?>
+                <input name="id_getter" <?php echo "value='$temp_id'"; ?> type="text"> <?php } ?>
+            </div>
             <div id="add-notes-buttons">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <?php
                             if (isset($_GET['id'])) { ?>
-                            <button type="submit" name="save"
+                            <button type="submit" name="save2"
                                 class="btn-primary btn blue-button-hover-white">save</button>
                             <button type="submit" name="publish"
                                 class="btn-primary btn blue-button-hover-white">publish</button>
