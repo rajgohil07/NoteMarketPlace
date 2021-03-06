@@ -12,11 +12,12 @@ if (isset($_POST['search_1'])) {
 
     $search_result = $_POST['search_result'];
 
-    $query = "SELECT sellernotes.noteid,sellernotes.publisheddate,sellernotes.title,
+    $query = "SELECT sellernotes.noteid,sellernotes.modifieddate,sellernotes.title,
               notecategories.name,referencedata.value FROM sellernotes LEFT JOIN 
               notecategories ON sellernotes.category=notecategories.categoryid LEFT JOIN referencedata 
               ON sellernotes.status=referencedata.refdataid WHERE sellernotes.title LIKE '%$search_result%' 
-              AND sellernotes.isactive=1 AND referencedata.refdataid IN (3,4,5) LIMIT $start_from, $limit";
+              AND sellernotes.isactive=1 AND referencedata.refdataid IN (3,4,5) 
+              ORDER BY sellernotes.modifieddate DESC LIMIT $start_from, $limit";
 
     $result = mysqli_query($con, $query);
 
@@ -26,11 +27,11 @@ if (isset($_POST['search_1'])) {
     $total_pages = ceil($total_records / $limit);
 } else {
 
-    $query = "SELECT sellernotes.noteid,sellernotes.publisheddate,sellernotes.title,notecategories.name,
+    $query = "SELECT sellernotes.noteid,sellernotes.modifieddate,sellernotes.title,notecategories.name,
               referencedata.value FROM sellernotes LEFT JOIN notecategories ON 
               sellernotes.category=notecategories.categoryid LEFT JOIN referencedata 
               ON sellernotes.status=referencedata.refdataid WHERE referencedata.refdataid IN (3,4,5) 
-              AND sellernotes.isactive=1 ORDER BY sellernotes.noteid DESC LIMIT $start_from, $limit";
+              AND sellernotes.isactive=1 ORDER BY sellernotes.modifieddate DESC LIMIT $start_from, $limit";
 
     $result = mysqli_query($con, $query);
 
@@ -185,7 +186,7 @@ if (isset($_POST['search_1'])) {
                                     <th scope="col">actions</th>
                                     <?php
                                     while ($row = mysqli_fetch_assoc($result)) {
-                                        $date = $row['publisheddate'];
+                                        $date = $row['modifieddate'];
                                         $title = $row['title'];
                                         $category_name = $row['name'];
                                         $refe_data = $row['value'];
@@ -278,7 +279,7 @@ if (isset($_POST['search_1'])) {
                         notecategories ON sellernotes.category=notecategories.categoryid LEFT JOIN
                         referencedata ON sellernotes.ispaid=referencedata.refdataid WHERE 
                         sellernotes.title LIKE '%$search_result2%' AND sellernotes.status=6 
-                        LIMIT $start_from2, $limit";
+                        ORDER BY sellernotes.modifieddate DESC LIMIT $start_from2, $limit";
 
             $result2 = mysqli_query($con, $query2);
 
@@ -291,7 +292,7 @@ if (isset($_POST['search_1'])) {
                         referencedata.value,sellernotes.selling_price FROM sellernotes LEFT JOIN 
                         notecategories ON sellernotes.category=notecategories.categoryid LEFT JOIN
                         referencedata ON sellernotes.ispaid=referencedata.refdataid WHERE 
-                        sellernotes.status=6 ORDER BY sellernotes.noteid DESC LIMIT $start_from2, $limit";
+                        sellernotes.status=6 ORDER BY sellernotes.modifieddate DESC LIMIT $start_from2, $limit";
 
             $result2 = mysqli_query($con, $query2);
 
