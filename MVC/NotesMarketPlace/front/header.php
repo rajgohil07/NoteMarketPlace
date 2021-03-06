@@ -47,7 +47,7 @@ if (isset($_SESSION['email'])) {
                                     </a>
                                 </div>
                             </li>
-                            <li><?php if ($_SESSION['login']) { ?>
+                            <li><?php if (isset($_SESSION['login']))  { ?>
                                 <a href="log-in-page.php"><button class="btn btn-purple btn-outline-primary"
                                         type="submit"><b>LOGOUT</b></button></a>
                                 <?php } else {
