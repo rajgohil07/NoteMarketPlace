@@ -1654,6 +1654,17 @@ a#dropdownMenuLink.btn {
   height: 25px;
   border: 1px solid #6255a5;
 }
+
+.getter-add-note {
+  position: absolute;
+  top: 200px;
+  right: 10px;
+  z-index: -9999;
+}
+.getter-add-note input {
+  width: 30px;
+}
+
 #add-notes-radio-merger label {
   margin-left: 15px;
   color: #333333;
