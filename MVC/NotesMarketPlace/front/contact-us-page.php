@@ -4,14 +4,43 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-$mail_sent = false;
-if (isset($_POST['submit']) && $_POST['sender_email'] != "") {
-    if (filter_var($_POST['sender_email'], FILTER_VALIDATE_EMAIL)) {
-        $name = $_POST['name'];
-        $sender_email = $_POST['sender_email'];
-        $subject = $_POST['subject'];
-        $comment = $_POST['comment'];
 
+$email_pattern = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
+$name_pattern = '/^[a-zA-Z ]*$/';
+
+$mail_sent = false;
+$name_check = true;
+$subject_check = true;
+$des_check = true;
+$mail_check = true;
+
+if (isset($_POST['submit'])) {
+
+    $name = $_POST['name'];
+    $sender_email = $_POST['sender_email'];
+    $subject = $_POST['subject'];
+    $comment = $_POST['comment'];
+
+    preg_match($name_pattern, $name, $name_match);
+    if (!$name_match[0]) {
+        $name_check = false;
+    }
+
+    preg_match($name_pattern, $subject, $subject_match);
+    if (!$subject_match[0]) {
+        $subject_check = false;
+    }
+
+    preg_match($name_pattern, $comment, $comment_match);
+    if (!$comment_match[0]) {
+        $des_check = false;
+    }
+
+    if (!filter_var($sender_email, FILTER_VALIDATE_EMAIL)) {
+        $mail_check = false;
+    }
+
+    if ($sender_email != "" && $name_check && $subject_check && $des_check && $mail_check) {
 
         require 'PHPMailer/Exception.php';
         require 'PHPMailer/PHPMailer.php';
@@ -101,7 +130,7 @@ if (isset($_POST['submit']) && $_POST['sender_email'] != "") {
                         <div class="email-sucess blue-font-34 text-center">
                             <?php
                             if ($mail_sent) {
-                                echo "Your Feedback is Submitted";
+                                echo "Your Feedback is Submitted!";
                             }
                             ?>
                         </div>
@@ -123,18 +152,46 @@ if (isset($_POST['submit']) && $_POST['sender_email'] != "") {
                                     <label id="contact-us-first-label-form">Full Name *</label>
                                     <input type="text" name="name" class="form-control input-light-color"
                                         placeholder="Enter your full Name">
+                                    <div class="correct-email">
+                                        <?php
+                                        if (!$name_check) {
+                                            echo "Please enter your name";
+                                        }
+                                        ?>
+                                    </div>
                                     <label class>Email Address *</label>
                                     <input type="mail" name="sender_email" class="form-control input-light-color"
                                         placeholder="Enter your email address">
+                                    <div class="correct-email">
+                                        <?php
+                                        if (!$mail_check) {
+                                            echo "Please enter your correct email address";
+                                        }
+                                        ?>
+                                    </div>
                                     <label>Subject *</label>
                                     <input type="text" name="subject" class="form-control input-light-color"
                                         placeholder="Enter your subject Name">
+                                    <div class="correct-email">
+                                        <?php
+                                        if (!$subject_check) {
+                                            echo "Please enter subject";
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label id="contact-us-comment" class="right-content">Comments / Questions *</label>
                                     <textarea id="contact-us-comment-box" name="comment"
                                         class="form-control right-content contact-us-res input-light-color"
                                         placeholder="Comments...."></textarea>
+                                    <div class="correct-email right-content">
+                                        <?php
+                                        if (!$des_check) {
+                                            echo "Please enter proper Comments / Questions";
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
                             <div id="contact-us-btn">
