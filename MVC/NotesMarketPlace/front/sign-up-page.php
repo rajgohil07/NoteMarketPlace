@@ -5,11 +5,18 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
+//booleans for validation
+$name_pattern = '/^[a-zA-Z ]*$/';
 $mail_exist = false;
 $mail_sent = false;
-$message = "Email already exists!";
-$password_match = true;
+$fname_check = true;
+$lname_check = true;
+$mail_check = true;
+$upper_psd_check = true;
+$lower_psd_check = true;
+$number_psd_check = true;
 $length_check = true;
+$password_match = true;
 
 if (isset($_POST['submit'])) {
     $firstName = $_POST['fname'];
@@ -21,13 +28,43 @@ if (isset($_POST['submit'])) {
     $email_checker = mysqli_query($con, "SELECT * FROM users WHERE emailid='$email'");
     $email_count = mysqli_num_rows($email_checker);
 
+    $check_fname = preg_match($name_pattern, $firstName);
+    if (!$check_fname) {
+        $fname_check = false;
+    }
+
+    $check_lname = preg_match($name_pattern, $lastName);
+    if (!$check_lname) {
+        $lname_check = false;
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $mail_check = false;
+    }
+
+    $upper_psd = preg_match('@[A-Z]@', $password);
+    if (!$upper_psd)
+        $upper_psd_check = false;
+
+    $lower_psd = preg_match('@[a-z]@', $password);
+    if (!$lower_psd)
+        $lower_psd_check = false;
+
+    $number_check = preg_match('@[0-9]@', $password);
+    if (!$number_check)
+        $number_psd_check = false;
+
+
     if ($password != $conform_psd) {
         $password_match = false;
     }
     if (strlen($password) < 6) {
         $length_check = false;
     }
-    if ($email_count == 0 && $password_match && $length_check) {
+
+    //all booleans should be true
+    if ($email_count == 0 && $password_match && $length_check && $lname_check && $fname_check && $mail_check && $upper_psd_check && $lower_psd_check && $number_psd_check) {
+
         $query = "INSERT INTO users(roleid,firstname,lastname,emailid,password,isemailverified,createddate,isactive) VALUES(1,'$firstName','$lastName','$email','$password',0,NOW(),1)";
         $result = mysqli_query($con, $query);
 
@@ -171,31 +208,58 @@ if (isset($_POST['submit'])) {
                                 <div class="form-group signup-form">
                                     <label>First Name</label>
                                     <input type="text" name="fname" class="form-control signup-input" id="fname-signup"
-                                        placeholder="Enter your first name" required>
+                                        placeholder="Enter your first name">
+                                    <div class="correct-email">
+                                        <?php
+                                        if (!$fname_check) {
+                                            echo "Please enter your first name";
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="form-group signup-form">
                                     <label>Last Name</label>
                                     <input type="text" name="lname" class="form-control signup-input" id="lname-signup"
-                                        placeholder="Enter your last name" required>
+                                        placeholder="Enter your last name">
+                                    <div class="correct-email">
+                                        <?php
+                                        if (!$lname_check) {
+                                            echo "Please enter your last name";
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="form-group signup-form">
                                     <label>Email</label>
                                     <input type="email" name="email" class="form-control signup-input" id="email-signup"
-                                        placeholder="Enter your email address" required>
+                                        placeholder="Enter your email address">
+                                    <div class="correct-email">
+                                        <?php
+                                        if ($mail_exist)
+                                            echo "Email address already exists!";
+                                        else if (!$mail_check)
+                                            echo "Please enter Valid Email address";
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="form-group signup-block signup-form">
                                     <label>Password</label>
                                     <img src="images/eye.png" toggle="#password-signup"
                                         class="pull-right toggle-password" alt="View">
                                     <input type="password" name="password" class="form-control signup-input"
-                                        id="password-signup" placeholder="Enter your password" required>
+                                        id="password-signup" placeholder="Enter your password">
                                     <div class="correct-email">
                                         <?php
                                         if (!$password_match)
-                                            echo "The Password doesn't match!";
-                                        else if (!$length_check) {
+                                            echo "The Password and Confirm Password doesn't match!";
+                                        else if (!$length_check)
                                             echo "The Password Length Should be more then 6 characters";
-                                        }
+                                        else if (!$upper_psd_check)
+                                            echo "Please enter at least one uppercase letter";
+                                        else if (!$lower_psd_check)
+                                            echo "Please enter at least one lowercase letter";
+                                        else if (!$number_psd_check)
+                                            echo "Please enter at least one numeric letter";
                                         ?>
                                     </div>
                                 </div>
@@ -204,7 +268,7 @@ if (isset($_POST['submit'])) {
                                     <img src="images/eye.png" toggle="#re-password-signup"
                                         class="pull-right toggle-password" alt="View">
                                     <input type="password" name="conform_psd" class="form-control signup-input"
-                                        id="re-password-signup" placeholder="Re-enter your password" required>
+                                        id="re-password-signup" placeholder="Re-enter your password">
                                 </div>
                                 <div class="general-btn">
                                     <button id="signup-btn" type="submit" name="submit"
@@ -212,19 +276,15 @@ if (isset($_POST['submit'])) {
                                         up</button>
                                 </div>
                                 <div class="text-center" id="sign-up">
-                                    Already have an account?<a href="log-in-page.php" title="click to Sign up">Login
-                                    </a>
-                                    <div id="email-exist">
-                                        <?php
-                                        if ($mail_exist) {
-                                            echo "<br><h3>" . $message . "</h3>";
-                                        }
-                                        ?>
-                                    </div>
+                                    <?php
+                                    if ($mail_sent) {
+                                    } else
+                                        echo " Already have an account?<a href='log-in-page.php' title='click to Sign up'>Login</a>";
+                                    ?>
                                     <div id="thanks-signup">
                                         <?php
                                         if ($mail_sent) {
-                                            echo "<br><h3>" . "Thank you for Signup.<br>Please verify the email " . "<span>" . $email . "</span>" . " via clicking on the link we sent you via email. " . "</h3>";
+                                            echo "<h3>Please verify the email via clicking on the link we sent you at <span>" . $email . "</span>.</h3>";
                                         }
                                         ?>
                                     </div>
