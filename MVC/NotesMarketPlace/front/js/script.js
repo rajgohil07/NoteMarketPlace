@@ -86,3 +86,34 @@ $(function () {
     $("#mobile-nav").css("height", "0%");
   });
 });
+
+//enable and disable price input
+function disablePrice() {
+  $("#price-box").attr("disabled", true);
+  $("#price-box").attr("required", false);
+}
+
+function enablePrice() {
+  $("#price-box").attr("disabled", false);
+  $("#price-box").attr("required", true);
+}
+
+//show file name
+var input = document.getElementById("upload-file");
+var infoArea = document.getElementById("file-upload-filename");
+input.addEventListener("change", showFileName);
+function showFileName(event) {
+  var input = event.srcElement;
+  var fileName = input.files[0].name;
+  infoArea.textContent = "File name: " + fileName;
+}
+
+//show file name
+var input2 = document.getElementById("note-preview");
+var infoArea2 = document.getElementById("file-upload-filename2");
+input2.addEventListener("change", showFileName2);
+function showFileName2(event) {
+  var input2 = event.srcElement;
+  var fileName2 = input2.files[0].name;
+  infoArea2.textContent = "File name: " + fileName2;
+}
