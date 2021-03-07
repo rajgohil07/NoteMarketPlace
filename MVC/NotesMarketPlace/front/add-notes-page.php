@@ -223,6 +223,103 @@ if (isset($_SESSION['email'])) {
                                   WHERE noteid=$dashboard_noteid";
 
         $result_insert_save = mysqli_query($con, $query_insert_save);
+
+        //display picture
+        $display_pic = $_FILES['display_picture'];
+        $filename = $display_pic['name'];
+        $filetmp = $display_pic['tmp_name'];
+        $extention = explode('.', $filename);
+        $filecheck = strtolower(end($extention));
+        $fileextstored = array('jpg', 'png', 'jpeg');
+
+        if (in_array($filecheck, $fileextstored)) {
+            if (!is_dir("../Members/")) {
+                mkdir('../Members/');
+            }
+            if (!is_dir("../Members/" . $seller_id)) {
+                mkdir("../Members/" . $seller_id);
+            }
+            if (!is_dir("../Members/" . $seller_id . "/" . $dashboard_noteid)) {
+                mkdir('../Members/' . $seller_id . '/' . $dashboard_noteid);
+            }
+            $destinationfile = '../Members/' . $seller_id . '/' . $dashboard_noteid . '/' . "DP_" . time() . '.' . $filecheck;
+            move_uploaded_file($filetmp, $destinationfile);
+            $query_pic = "UPDATE sellernotes SET displaypic='$destinationfile' WHERE noteid=$dashboard_noteid";
+            $result_pic = mysqli_query($con, $query_pic);
+        } else {
+            $valid_format_1 = false;
+        }
+
+        //Note Preview
+        $note_preview = $_FILES['note_preview'];
+        $filename2 = $note_preview['name'];
+        $filetmp2 = $note_preview['tmp_name'];
+        $extention2 = explode('.', $filename2);
+        $filecheck2 = strtolower(end($extention2));
+        $fileextstored2 = array('jpg', 'png', 'jpeg');
+
+        if (in_array($filecheck2, $fileextstored2)) {
+            if (!is_dir("../Members/")) {
+                mkdir('../Members/');
+            }
+            if (!is_dir("../Members/" . $seller_id)) {
+                mkdir("../Members/" . $seller_id);
+            }
+            if (!is_dir("../Members/" . $seller_id . "/" . $dashboard_noteid)) {
+                mkdir('../Members/' . $seller_id . '/' . $dashboard_noteid);
+            }
+            $destinationfile2 = '../Members/' . $seller_id . '/' . $dashboard_noteid . '/' . "Preview_" . time() . '.' . $filecheck2;
+            move_uploaded_file($filetmp2, $destinationfile2);
+            $query_preview = "UPDATE sellernotes SET notespreview='$destinationfile2' WHERE noteid=$dashboard_noteid";
+            $result_preview = mysqli_query($con, $query_preview);
+        } else {
+            $valid_format_3 = false;
+        }
+
+        //multiple files
+        $upload_note = count($_FILES['upload_note']['name']);
+
+        // Looping all files
+        for ($i = 0; $i < $upload_note; $i++) {
+
+
+            $filename3 = $_FILES['upload_note']['name'][$i];
+            $extention3 = explode('.', $filename3);
+            $filecheck3 = strtolower(end($extention3));
+            $fileextstored3 = array('pdf');
+
+            if (in_array($filecheck3, $fileextstored3)) {
+                $query_multiple_path = "INSERT INTO sellernotesattachements (noteid,createddate,createdby,isactive) 
+                             VALUES ($dashboard_noteid,NOW(),$seller_id,1)";
+                $result_multiple_path = mysqli_query($con, $query_multiple_path);
+
+                $attach_id = mysqli_insert_id($con);
+
+                // Upload file
+                if (!is_dir("../Members/")) {
+                    mkdir('../Members/');
+                }
+                if (!is_dir("../Members/" . $seller_id)) {
+                    mkdir("../Members/" . $seller_id);
+                }
+                if (!is_dir("../Members/" . $seller_id . "/" . $dashboard_noteid)) {
+                    mkdir('../Members/' . $seller_id . '/' . $dashboard_noteid);
+                }
+                if (!is_dir("../Members/" . $seller_id . "/" . $dashboard_noteid . "/" . "Attachements")) {
+                    mkdir('../Members/' . $seller_id . '/' . $dashboard_noteid . '/' . 'Attachements');
+                }
+
+                $multiple_file_name = '../Members/' . $seller_id . '/' . $dashboard_noteid . '/' . 'Attachements/' . $attach_id . '_' . time() . '.' . $filecheck3;
+                move_uploaded_file($_FILES['upload_note']['tmp_name'][$i], $multiple_file_name);
+
+                $attached_name = $attach_id . "_" . time() . $filecheck3;
+                $query_multiple_final = "UPDATE sellernotesattachements SET filename='$attached_name',filepath='$multiple_file_name' WHERE note_attach_id =$attach_id";
+                $result_multiple_final = mysqli_query($con, $query_multiple_final);
+            } else {
+                $valid_format_2 = false;
+            }
+        }
+
         header('Location:dashboard-page.php');
     }
     if (isset($_POST['publish'])) {
@@ -249,6 +346,104 @@ if (isset($_SESSION['email'])) {
                                   WHERE noteid=$dashboard_noteid";
 
         $result_insert_pubhlish = mysqli_query($con, $query_insert_publish);
+
+        //display picture
+        $display_pic = $_FILES['display_picture'];
+        $filename = $display_pic['name'];
+        $filetmp = $display_pic['tmp_name'];
+        $extention = explode('.', $filename);
+        $filecheck = strtolower(end($extention));
+        $fileextstored = array('jpg', 'png', 'jpeg');
+
+        if (in_array($filecheck, $fileextstored)) {
+            if (!is_dir("../Members/")) {
+                mkdir('../Members/');
+            }
+            if (!is_dir("../Members/" . $seller_id)) {
+                mkdir("../Members/" . $seller_id);
+            }
+            if (!is_dir("../Members/" . $seller_id . "/" . $dashboard_noteid)) {
+                mkdir('../Members/' . $seller_id . '/' . $dashboard_noteid);
+            }
+
+            $destinationfile = '../Members/' . $seller_id . '/' . $dashboard_noteid . '/' . "DP_" . time() . '.' . $filecheck;
+            move_uploaded_file($filetmp, $destinationfile);
+            $query_pic = "UPDATE sellernotes SET displaypic='$destinationfile' WHERE noteid=$dashboard_noteid";
+            $result_pic = mysqli_query($con, $query_pic);
+        } else {
+            $valid_format_1 = false;
+        }
+
+        //Note Preview
+        $note_preview = $_FILES['note_preview'];
+        $filename2 = $note_preview['name'];
+        $filetmp2 = $note_preview['tmp_name'];
+        $extention2 = explode('.', $filename2);
+        $filecheck2 = strtolower(end($extention2));
+        $fileextstored2 = array('jpg', 'png', 'jpeg');
+
+        if (in_array($filecheck2, $fileextstored2)) {
+            if (!is_dir("../Members/")) {
+                mkdir('../Members/');
+            }
+            if (!is_dir("../Members/" . $seller_id)) {
+                mkdir("../Members/" . $seller_id);
+            }
+            if (!is_dir("../Members/" . $seller_id . "/" . $dashboard_noteid)) {
+                mkdir('../Members/' . $seller_id . '/' . $dashboard_noteid);
+            }
+            $destinationfile2 = '../Members/' . $seller_id . '/' . $dashboard_noteid . '/' . "Preview_" . time() . '.' . $filecheck2;
+            move_uploaded_file($filetmp2, $destinationfile2);
+            $query_preview = "UPDATE sellernotes SET notespreview='$destinationfile2' WHERE noteid=$dashboard_noteid";
+            $result_preview = mysqli_query($con, $query_preview);
+        } else {
+            $valid_format_3 = false;
+        }
+
+        //multiple files
+        $upload_note = count($_FILES['upload_note']['name']);
+
+        // Looping all files
+        for ($i = 0; $i < $upload_note; $i++) {
+
+
+            $filename3 = $_FILES['upload_note']['name'][$i];
+            $extention3 = explode('.', $filename3);
+            $filecheck3 = strtolower(end($extention3));
+            $fileextstored3 = array('pdf');
+
+            if (in_array($filecheck3, $fileextstored3)) {
+                $query_multiple_path = "INSERT INTO sellernotesattachements (noteid,createddate,createdby,isactive) 
+                      VALUES ($dashboard_noteid,NOW(),$seller_id,1)";
+                $result_multiple_path = mysqli_query($con, $query_multiple_path);
+
+                $attach_id = mysqli_insert_id($con);
+
+                // Upload file
+                if (!is_dir("../Members/")) {
+                    mkdir('../Members/');
+                }
+                if (!is_dir("../Members/" . $seller_id)) {
+                    mkdir("../Members/" . $seller_id);
+                }
+                if (!is_dir("../Members/" . $seller_id . "/" . $dashboard_noteid)) {
+                    mkdir('../Members/' . $seller_id . '/' . $dashboard_noteid);
+                }
+                if (!is_dir("../Members/" . $seller_id . "/" . $dashboard_noteid . "/" . "Attachements")) {
+                    mkdir('../Members/' . $seller_id . '/' . $dashboard_noteid . '/' . 'Attachements');
+                }
+
+                $multiple_file_name = '../Members/' . $seller_id . '/' . $dashboard_noteid . '/' . 'Attachements/' . $attach_id . '_' . time() . '.' . $filecheck3;
+                move_uploaded_file($_FILES['upload_note']['tmp_name'][$i], $multiple_file_name);
+
+                $attached_name = $attach_id . "_" . time() . $filecheck3;
+                $query_multiple_final = "UPDATE sellernotesattachements SET filename='$attached_name',filepath='$multiple_file_name' WHERE note_attach_id =$attach_id";
+                $result_multiple_final = mysqli_query($con, $query_multiple_final);
+            } else {
+                $valid_format_2 = false;
+            }
+        }
+
         header('Location:dashboard-page.php');
     }
 } else
@@ -364,10 +559,14 @@ if (isset($_SESSION['email'])) {
                                             alt="Upload your photo here"></label>
                                     <input id="upload-file" name="display_picture"
                                         class="form-control input-light-color" type="file">
+                                    <div style="margin-top: 22px;font-weight: 600;font-size: 15px"
+                                        id="file-upload-filename"></div>
                                 </div>
                                 <div class="alert-msg">
                                     <?php
-                                    if ($valid_format_1 == false) {
+                                    if (empty($display_pic)) {
+                                        echo "";
+                                    } else if ($valid_format_1 == false) {
                                         echo "Only JPEG,JPG,PNG file formats are supported!";
                                     }
                                     ?>
@@ -379,7 +578,8 @@ if (isset($_SESSION['email'])) {
                                     <label for="upload-note"><img style="height: 46px;" src="images/upload-note.png"
                                             class="right-content" title="Click here to upload your Notes"
                                             alt="Upload your photo here"></label>
-                                    <input id="upload-note" name="upload_note[]"
+                                    <input id="upload-note" name="upload_note[]" <?php if (isset($_GET['id'])) echo "";
+                                                                                    else echo "required"; ?>
                                         class="form-control right-content input-light-color" type="file" multiple>
                                 </div>
                                 <div class="right-content alert-msg">
@@ -563,14 +763,14 @@ if (isset($_SESSION['email'])) {
                                             if (isset($_GET['id'])) { ?>
                                             <input class='form-check-input'
                                                 <?php if ($sell_type_new == 2) echo "checked"; ?> type='radio'
-                                                name='Sell-for' id='exampleRadios1' value='2'>
+                                                name='Sell-for' id='exampleRadios1' onclick="disablePrice()" value='2'>
                                             <?php } else {
                                                 $query_note_mode = "SELECT refdataid FROM referencedata WHERE value='Free'";
                                                 $result_note_mode = mysqli_query($con, $query_note_mode);
                                                 while ($row = mysqli_fetch_assoc($result_note_mode)) {
                                                     $note_type = $row['refdataid'];
                                                     echo "<input class='form-check-input' type='radio' name='Sell-for'
-                                                id='exampleRadios1' value='$note_type' checked>";
+                                                id='exampleRadios1' onclick=" . "disablePrice()" . " value='$note_type' checked>";
                                                 }
                                             }
                                             ?>
@@ -582,14 +782,14 @@ if (isset($_SESSION['email'])) {
 
                                             <input class='form-check-input'
                                                 <?php if ($sell_type_new == 1) echo "checked"; ?> type='radio'
-                                                name='Sell-for' id='exampleRadios2' value='1'>
+                                                name='Sell-for' id='exampleRadios2' onclick="enablePrice()" value='1'>
                                             <?php } else {
                                                 $query_note_mode = "SELECT refdataid FROM referencedata WHERE value='Paid'";
                                                 $result_note_mode = mysqli_query($con, $query_note_mode);
                                                 while ($row = mysqli_fetch_assoc($result_note_mode)) {
                                                     $note_type = $row['refdataid'];
                                                     echo "<input class='form-check-input' type='radio' name='Sell-for'
-                                                      id='exampleRadios2' value='$note_type'>";
+                                                      id='exampleRadios2' onclick=" . "enablePrice()" . " value='$note_type'>";
                                                 }
                                             }
                                             ?>
@@ -598,9 +798,9 @@ if (isset($_SESSION['email'])) {
                                     </div>
                                     <div id="add-note-sell-price">
                                         <label>Sell price *</label>
-                                        <input type="number" step=".01" name="sell_price"
+                                        <input type="number" step=".01" name="sell_price" id="price-box"
                                             value="<?php echo $sell_price ?>" class="form-control input-light-color"
-                                            placeholder="Enter your Price">
+                                            placeholder="Enter your Price" disabled>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -612,10 +812,14 @@ if (isset($_SESSION['email'])) {
                                                 alt="Upload your Preview here"></label>
                                         <input id="note-preview" name="note_preview"
                                             class="form-control input-light-color" type="file">
+                                        <div style="font-size: 15px;margin-top:70px;font-weight: 600;"
+                                            id="file-upload-filename2"></div>
                                     </div>
                                     <div class="alert-msg right-content">
                                         <?php
-                                        if ($valid_format_3 == false) {
+                                        if (empty($note_preview)) {
+                                            echo "";
+                                        } else if ($valid_format_3 == false) {
                                             echo "Only JPEG,JPG,PNG file formats are supported!";
                                         }
                                         ?>
@@ -659,7 +863,6 @@ if (isset($_SESSION['email'])) {
         <!--footer end-->
 
     </div>
-
 
     <!--popper js-->
     <script src="js/popper/popper.min.js"></script>
