@@ -206,7 +206,9 @@ if (isset($_POST['search_1'])) {
                                     </tr>";
                                         } else {
                                             echo " <td>
-                                        <img src='images/eye.png' title='Click to View' alt='View'>
+                                       <a href='notes-details-page.php'>
+                                            <img src='images/eye.png' title='Click to View' alt='View'>
+                                            </a>
                                         </td>
                                     </tr>";
                                         }
