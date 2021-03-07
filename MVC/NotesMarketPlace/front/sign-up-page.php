@@ -5,18 +5,26 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
+$name_pattern = '/^[a-zA-Z ]{3,49}$/';
+
 //booleans for validation
-$name_pattern = '/^[a-zA-Z ]*$/';
 $mail_exist = false;
 $mail_sent = false;
+$mail_check = true;
+
 $fname_check = true;
 $lname_check = true;
-$mail_check = true;
+
+//boolean for proper Password validation 
 $upper_psd_check = true;
 $lower_psd_check = true;
 $number_psd_check = true;
 $length_check = true;
 $password_match = true;
+
+//define variable for NOT NULL 
+$firstName = "checked";
+$lastName = "checked";
 
 if (isset($_POST['submit'])) {
     $firstName = $_POST['fname'];
@@ -211,9 +219,10 @@ if (isset($_POST['submit'])) {
                                         placeholder="Enter your first name">
                                     <div class="correct-email">
                                         <?php
-                                        if (!$fname_check) {
+                                        if (strlen($firstName) == 0)
                                             echo "Please enter your first name";
-                                        }
+                                        else  if (!$fname_check)
+                                            echo "First name should be more then 3 characters!";
                                         ?>
                                     </div>
                                 </div>
@@ -223,9 +232,10 @@ if (isset($_POST['submit'])) {
                                         placeholder="Enter your last name">
                                     <div class="correct-email">
                                         <?php
-                                        if (!$lname_check) {
-                                            echo "Please enter your last name";
-                                        }
+                                        if (strlen($lastName) == 0)
+                                            echo "Please enter your first name";
+                                        else if (!$lname_check)
+                                            echo "Last name should be more then 3 characters!";
                                         ?>
                                     </div>
                                 </div>
