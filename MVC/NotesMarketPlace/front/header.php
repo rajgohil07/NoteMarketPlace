@@ -4,6 +4,7 @@ if (isset($_SESSION['email'])) {
 } else
     session_start();
 ?>
+
 <!--header -->
 <header class="site-header">
     <div class="container column-padding-remover">
@@ -22,10 +23,14 @@ if (isset($_SESSION['email'])) {
                             <li><a href="faq-page.php">FAQ</a></li>
                             <li><a href="contact-us-page.php">Contact Us</a></li>
                             <li class="dropdown">
-                                <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
+                                <?php
+                                if (isset($_SESSION['email'])) { ?>
+                                <a role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img src="images/user-img.png" alt="user" class="img-fluid">
                                 </a>
+                                <?php } else {
+                                }
+                                ?>
                                 <div class="dropdown-menu shadow-drop dropdowncustom" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="user-profile-page.php">
                                         <h6>My Profile</h6>
@@ -43,9 +48,8 @@ if (isset($_SESSION['email'])) {
                                         <h6>Change Password</h6>
                                     </a>
                                     <?php if (isset($_SESSION['email'])) { ?>
-                                    <a class="dropdown-item" href="logout.php"><button
-                                            class="btn btn-purple btn-outline-primary"
-                                            type="submit"><b>LOGOUT</b></button>
+                                    <a class="dropdown-item" href="logout.php">
+                                        <h5><b>LOGOUT</b></h5>
                                     </a>
                                     <?php
                                     } else {
@@ -84,9 +88,12 @@ if (isset($_SESSION['email'])) {
                             <li><a href="contact-us-page.php">Contact Us</a></li>
                         </div>
                         <li class="dropdown">
-                            <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?php
+                            if (isset($_SESSION['email'])) { ?>
+                            <a role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="images/user-img.png" alt="user" class="img-fluid">
                             </a>
+                            <?php } else ?>
                             <div class="dropdown-menu shadow-drop dropdowncustom" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="user-profile-page.php">
                                     <h6>My Profile</h6>
@@ -106,7 +113,7 @@ if (isset($_SESSION['email'])) {
                                 <?php
                                 if (isset($_SESSION['email'])) { ?>
                                 <a class="dropdown-item" href="logout.php">
-                                    <button type="button" class="btn btn-purple btn-outline-primary">LOGOUT</button>
+                                    <h5>LOGOUT</h5>
                                 </a>
                                 <?php
                                 } else { ?>
