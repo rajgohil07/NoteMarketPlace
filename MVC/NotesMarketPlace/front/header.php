@@ -42,13 +42,23 @@ if (isset($_SESSION['email'])) {
                                     <a class="dropdown-item" href="change-password-page.php">
                                         <h6>Change Password</h6>
                                     </a>
-                                    <a class="dropdown-item pur_col" href="log-in-page.php">
-                                        <h5>LOGOUT</h5>
+                                    <?php if (isset($_SESSION['email'])) { ?>
+                                    <a class="dropdown-item" href="logout.php"><button
+                                            class="btn btn-purple btn-outline-primary"
+                                            type="submit"><b>LOGOUT</b></button>
+                                    </a>
+                                    <?php
+                                    } else {
+                                    ?>
+                                    <a class="dropdown-item" href="log-in-page.php"><button
+                                            class="btn btn-purple btn-outline-primary"
+                                            type="submit"><b>LOGIN</b></button></a>
+                                    <?php } ?>
                                     </a>
                                 </div>
                             </li>
-                            <li><?php if (isset($_SESSION['login']))  { ?>
-                                <a href="log-in-page.php"><button class="btn btn-purple btn-outline-primary"
+                            <li><?php if (isset($_SESSION['email'])) { ?>
+                                <a href="logout.php"><button class="btn btn-purple btn-outline-primary"
                                         type="submit"><b>LOGOUT</b></button></a>
                                 <?php } else {
                                 ?>
@@ -93,14 +103,33 @@ if (isset($_SESSION['email'])) {
                                 <a class="dropdown-item" href="change-password-page.php">
                                     <h6>Change Password</h6>
                                 </a>
+                                <?php
+                                if (isset($_SESSION['email'])) { ?>
+                                <a class="dropdown-item" href="logout.php">
+                                    <button type="button" class="btn btn-purple btn-outline-primary">LOGOUT</button>
+                                </a>
+                                <?php
+                                } else { ?>
                                 <a class="dropdown-item" href="log-in-page.php">
-                                    <h5>LOGOUT</h5>
+                                    <button type="button" class="btn btn-purple btn-outline-primary">LOGIN</button>
+                                </a>
+                                <?php }  ?>
                                 </a>
                             </div>
                         </li>
-                        <li><a href="log-in-page.php">
-                                <button type="button" class="btn btn-purple btn-outline-primary">Logout</button>
+                        <li>
+                            <?php
+                            if (isset($_SESSION['email'])) { ?>
+                            <a href="logout.php">
+                                <button type="button" class="btn btn-purple btn-outline-primary">LOGOUT</button>
                             </a>
+                            <?php
+                            } else { ?>
+                            <a href="log-in-page.php">
+                                <button type="button" class="btn btn-purple btn-outline-primary">LOGIN</button>
+                            </a>
+                            <?php }  ?>
+
                         </li>
                     </ul>
                 </div>
