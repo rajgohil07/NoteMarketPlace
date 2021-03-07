@@ -199,7 +199,6 @@ if (isset($_POST['submit'])) {
                     <div class="col-lg-4 col-md-6 col-sm-8 col-12">
                         <!--Login form -->
                         <div id="log-in" class="signup-background">
-                            <!--Form-->
                             <form action="sign-up-page.php" method="POST">
                                 <h2 class="text-center heading-login">
                                     Create an Account
@@ -260,9 +259,7 @@ if (isset($_POST['submit'])) {
                                         id="password-signup" placeholder="Enter your password">
                                     <div class="correct-email">
                                         <?php
-                                        if (!$password_match)
-                                            echo "The Password and Confirm Password doesn't match!";
-                                        else if (!$length_check)
+                                        if (!$length_check)
                                             echo "The Password Length Should be more then 6 characters";
                                         else if (!$upper_psd_check)
                                             echo "Please enter at least one uppercase letter";
@@ -279,6 +276,12 @@ if (isset($_POST['submit'])) {
                                         class="pull-right toggle-password" alt="View">
                                     <input type="password" name="conform_psd" class="form-control signup-input"
                                         id="re-password-signup" placeholder="Re-enter your password">
+                                    <div class="correct-email">
+                                        <?php
+                                        if (!$password_match && $length_check && $upper_psd_check && $lower_psd_check && $number_psd_check)
+                                            echo "The Password and Confirm Password doesn't match!";
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="general-btn">
                                     <button id="signup-btn" type="submit" name="submit"
