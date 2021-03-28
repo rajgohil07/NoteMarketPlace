@@ -143,6 +143,7 @@ window.location.replace("log-in-page.php");
                                     $select_attach = mysqli_query($con, "SELECT attactmentpath FROM downloads WHERE noteid=$all_note_id");
                                     $count_attach = mysqli_num_rows($select_attach);
                                     $final_price = $final_price + ($price_all_note / $count_attach);
+                                    $final_price = round($final_price, 2);
                                 }
                                 ?>
 
