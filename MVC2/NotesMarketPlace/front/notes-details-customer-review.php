@@ -54,24 +54,29 @@ if (isset($_GET['noteid']))
     <div id="notes-details-reviews">
 
         <?php
-        $rate_counter = 1;
-        $review_getter = mysqli_query($con, "SELECT COUNT(1),users.firstname,users.lastname,sellernotesreview.ratings,sellernotesreview.comments,userprofile.profile_pic FROM users 
-                                    LEFT JOIN sellernotesreview ON users.userid=sellernotesreview.reviewer_id 
-                                    LEFT JOIN userprofile ON userprofile.userid=sellernotesreview.reviewer_id
-                                    WHERE noteid=$noteid");
 
-        while ($row = mysqli_fetch_assoc($review_getter)) {
-            $rate_counter++;
-            $full_name = $row['firstname'] . " " . $row['lastname'];
-            $rate_val = $row['ratings'];
-            $rate_cmnt = $row['comments'];
-            $member_pic = $row['profile_pic'];
-            $review_count = $row['COUNT(1)'];
-        ?>
+        //count decider
+        $review_decide = mysqli_query($con, "SELECT * from sellernotesreview where noteid=$noteid");
+        if (mysqli_num_rows($review_decide) > 0) {
+
+            //if has review it will execute this block
+            $rate_counter = 1;
+            $review_getter = mysqli_query($con, "SELECT users.firstname,users.lastname,sellernotesreview.ratings,sellernotesreview.comments,userprofile.profile_pic FROM users 
+                                        LEFT JOIN sellernotesreview ON users.userid=sellernotesreview.reviewer_id 
+                                        LEFT JOIN userprofile ON userprofile.userid=sellernotesreview.reviewer_id
+                                        WHERE noteid=$noteid");
+
+            while ($row = mysqli_fetch_assoc($review_getter)) {
+                $rate_counter++;
+                $full_name = $row['firstname'] . " " . $row['lastname'];
+                $rate_val = $row['ratings'];
+                $rate_cmnt = $row['comments'];
+                $member_pic = $row['profile_pic'];
+                $review_count = mysqli_num_rows($review_getter); ?>
 
         <div class="row notes-review-ender-line">
-            <?php
-                if ($review_count > 0) { ?>
+
+            <?php if ($review_count > 0) { ?>
             <div class="col-md-2 col-3">
 
                 <!-- Profile-pic -->
@@ -101,14 +106,9 @@ if (isset($_GET['noteid']))
                     <h5><?php echo $rate_cmnt ?></h5>
                 </div>
             </div>
-            <?php   } else { ?>
-            <div>
-                <h3 class="blue-font-24 ">No Reviews Yet!</h3>
-                <h6 class="first-reviewer no-review-h6">(be the first to review it!)</h6>
-            </div>
-            <?php } ?>
-
         </div>
+        <?php  } ?>
+
         <script>
         $('#<?php echo $rate_counter ?>').jsRapStar({
             length: 5,
@@ -118,8 +118,17 @@ if (isset($_GET['noteid']))
             value: '<?php echo $rate_val ?>',
         });
         </script>
-        <?php  } ?>
-    </div>
+
+        <?php
+            }
+        } else {
+        ?>
+        <div>
+            <h3 class="blue-font-24 ">No Reviews Yet!</h3>
+            <h6 class="first-reviewer no-review-h6">(be the first to review it!)</h6>
+        </div>
+        <?php } ?>
+
 </body>
 
 </html>
