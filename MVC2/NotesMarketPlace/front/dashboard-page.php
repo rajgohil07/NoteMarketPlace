@@ -241,7 +241,6 @@ window.location.replace("log-in-page.php");
                                     echo "<tr>
                                         <td>$date</td>
                                         <td><a title='click to view $title' href='notes-details-page.php?id=$noteid'>$title</a></td>
-                                        <td>$title</td>
                                         <td>$category_name</td>
                                         <td>$refe_data</td>";
                                     if ($refe_data == 'Draft') {
