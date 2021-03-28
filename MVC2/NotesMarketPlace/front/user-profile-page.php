@@ -56,9 +56,6 @@ if (isset($_POST['submit'])) {
     if ($exist == 0)
         $insert_query = mysqli_query($con, "INSERT INTO userprofile(profile_pic,userid,createddate,createdby) VALUES('$destinationfile',$userid,NOW(),$userid)");
 
-    if (!$insert_query)
-        die(mysqli_error($con));
-
     $update_query = "UPDATE userprofile SET dob='$dob',gender='$gender',phone_country_code='$phone_code',
                      phone_no='$phone_no',address_line1='$add_line1',
                      address_line2='$add_line2',zipcode='$zipcode',state='$state',city='$city',
