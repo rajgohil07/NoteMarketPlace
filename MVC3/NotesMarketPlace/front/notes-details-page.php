@@ -368,11 +368,11 @@ while ($row = mysqli_fetch_assoc($contact_us_phone_getter))
                             </div>
                             <div class="col-md-6 text-right col-6 column-padding-remover">
                                 <div id="note-details-des-ans">
-                                    <h3><?php echo $university ?></h3>
-                                    <h3><?php echo $country_name ?></h3>
-                                    <h3><?php echo $course ?></h3>
-                                    <h3><?php echo $course_code ?></h3>
-                                    <h3><?php echo $professor ?></h3>
+                                    <h3><?php echo (!empty($university) && $university != '') ? $university : 'Not specified' ?></h3>
+                                    <h3><?php echo (!empty($country_name) && $country_name != '') ? $country_name : 'Not specified' ?></h3>
+                                    <h3><?php echo (!empty($course) && $course) ? $course : 'Not specified' ?></h3>
+                                    <h3><?php echo (!empty($course_code) && $course_code != '') ? $course_code : 'Not specified' ?></h3>
+                                    <h3><?php echo (!empty($professor) && $professor != '') ? $professor : 'Not specified' ?></h3>
                                     <h3><?php echo $note_page ?></h3>
                                     <h3><?php echo date('D,d F Y', strtotime($pubhlished_date)); ?></h3>
                                     <?php
