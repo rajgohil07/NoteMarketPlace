@@ -13,7 +13,7 @@ if (isset($_SESSION['email'])) {
 //approve query
 if (isset($_POST['approve_submit'])) {
     $noteid = $_POST['approve_noteid'];
-    $Approve_query = mysqli_query($con, "UPDATE sellernotes SET status=6,actionedby='$loggerid' WHERE noteid=$noteid");
+    $Approve_query = mysqli_query($con, "UPDATE sellernotes SET status=6,actionedby='$loggerid',modifieddate=NOW(),modifiedby=$loggerid WHERE noteid=$noteid");
 
     header("Location:rejected-notes-page.php");
 }
