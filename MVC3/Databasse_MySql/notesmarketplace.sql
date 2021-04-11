@@ -550,7 +550,7 @@ CREATE TABLE `systemconfiguration` (
 
 INSERT INTO `systemconfiguration` (`configid`, `key_info`, `value`, `createddate`, `createdby`, `modifieddate`, `modifiedby`, `isactive`) VALUES
 (1, 'support_email', 'raj69gohil@gmail.com', '2021-04-10 21:31:41', 11, '2021-04-10 21:32:48', 11, b'1'),
-(2, 'support_phone_no', '91 9824328786', '2021-04-10 21:31:41', 11, '2021-04-10 21:32:48', 11, b'1'),
+(2, 'support_phone_no', '919824328786', '2021-04-10 21:31:41', 11, '2021-04-10 21:32:48', 11, b'1'),
 (3, 'email_for_events', 'notesmarketplace@gmail.com', '2021-04-10 21:31:41', 11, '2021-04-10 21:32:48', 11, b'1'),
 (4, 'fb_url', 'https://www.facebook.com/TatvaSoft/', '2021-04-10 21:31:41', 11, '2021-04-10 21:32:48', 11, b'1'),
 (5, 'twitter_url', 'https://twitter.com/tatvasoft?s=20', '2021-04-10 21:31:41', 11, '2021-04-10 21:32:48', 11, b'1'),
