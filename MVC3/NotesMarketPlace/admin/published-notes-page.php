@@ -20,7 +20,7 @@ if (isset($_POST['unpublish_submit'])) {
     $review_admin = $_POST['unpublish_review'];
 
     //remove query
-    $query_remove = mysqli_query($con, "UPDATE sellernotes SET status=8,admin_remarks='$review_admin',actionedby=$loggerid WHERE noteid=$noteid");
+    $query_remove = mysqli_query($con, "UPDATE sellernotes SET status=8,admin_remarks='$review_admin',actionedby=$loggerid,modifieddate=NOW(),modifiedby=$loggerid WHERE noteid=$noteid");
 
     // seller name getter
     $seller_name_getter = mysqli_query($con, " SELECT u.firstname,u.lastname,u.emailid,sn.admin_remarks,sn.title FROM users u LEFT JOIN sellernotes sn ON sn.sellerid=u.userid WHERE sn.noteid=$noteid");
