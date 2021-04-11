@@ -54,7 +54,7 @@ if (isset($_POST['unpublish_submit'])) {
     $noteid = $_POST['reject_noteid'];
     $remark = $_POST['unpublish_review'];
 
-    $unpublish_query = mysqli_query($con, "UPDATE sellernotes SET status=7,actionedby='$loggerid',admin_remarks='$remark' WHERE noteid=$noteid");
+    $unpublish_query = mysqli_query($con, "UPDATE sellernotes SET status=7,actionedby='$loggerid',admin_remarks='$remark',modifieddate=NOW(),modifiedby=$loggerid WHERE noteid=$noteid");
     header("Location:notes-under-review-page.php");
 }
 
@@ -62,14 +62,14 @@ if (isset($_POST['unpublish_submit'])) {
 if (isset($_POST['Approve_submit'])) {
     $noteid = $_POST['approve_noteid'];
 
-    $Approve_query = mysqli_query($con, "UPDATE sellernotes SET status=6,actionedby='$loggerid' WHERE noteid=$noteid");
+    $Approve_query = mysqli_query($con, "UPDATE sellernotes SET status=6,publisheddate=NOW(),actionedby='$loggerid',modifieddate=NOW(),modifiedby=$loggerid WHERE noteid=$noteid");
     header("Location:notes-under-review-page.php");
 }
 
 //review
 if (isset($_POST['review_submit'])) {
     $noteid = $_POST['review_noteid'];
-    $Review_query = mysqli_query($con, "UPDATE sellernotes SET status=5,actionedby='$loggerid' WHERE noteid=$noteid");
+    $Review_query = mysqli_query($con, "UPDATE sellernotes SET status=5,actionedby='$loggerid',modifieddate=NOW(),modifiedby=$loggerid WHERE noteid=$noteid");
     header("Location:notes-under-review-page.php");
 }
 
