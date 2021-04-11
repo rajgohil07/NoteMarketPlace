@@ -121,7 +121,9 @@ $filter_search_result = mysqli_query($con, $filter_search_query);
 
                         <!-- university name -->
                         <img class="search-icon-resizer" src="images/university-dark.png" alt="university">
-                        <h6 class="search-result-data-body"><?php echo $university_name; ?></h6>
+                        <h6 class="search-result-data-body">
+                            <?php echo (!empty($university_name) && $university_name != '') ? $university_name : 'Not specified' ?>
+                        </h6>
                     </div>
 
                     <!-- notes pages -->
