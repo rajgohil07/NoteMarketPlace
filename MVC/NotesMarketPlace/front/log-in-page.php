@@ -106,8 +106,8 @@ if (isset($_POST['login'])) {
                                 <div class="form-group">
                                     <label>Email</label>
                                     <?php
-                                    $cookie_error = $_COOKIE['email'];
                                     if (isset($_COOKIE['email'])) {
+                                        $cookie_error = $_COOKIE['email'];
                                         echo " <input type='email' name='email' value='$cookie_error' class='form-control'
                                         id='login-email' placeholder='Enter your email'>";
                                     } else {
