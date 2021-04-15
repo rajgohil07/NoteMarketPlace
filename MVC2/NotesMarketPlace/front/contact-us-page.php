@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-$name_pattern = "/^[a-zA-Z0-9_ ]*$/";
+$name_pattern = '/^[a-zA-Z0-9 ]*$/';
 
 if (isset($_SESSION['email'])) {
     $user_email = $_SESSION['email'];
@@ -31,20 +31,31 @@ if (isset($_POST['submit'])) {
     $subject = $_POST['subject'];
     $comment = $_POST['comment'];
 
+    //proper preg match
     preg_match($name_pattern, $name, $name_match);
-    if (!$name_match[0]) {
+    if (!empty($name_match)) {
+        if (!$name_match[0]) {
+            $name_check = false;
+        }
+    } else
         $name_check = false;
-    }
 
     preg_match($name_pattern, $subject, $subject_match);
-    if (!$subject_match[0]) {
+    if (!empty($subject_match)) {
+        if (!$subject_match[0]) {
+            $subject_check = false;
+        }
+    } else
         $subject_check = false;
-    }
+
 
     preg_match($name_pattern, $comment, $comment_match);
-    if (!$comment_match[0]) {
+    if (!empty($comment_match)) {
+        if (!$comment_match[0]) {
+            $des_check = false;
+        }
+    } else
         $des_check = false;
-    }
 
     if (!filter_var($sender_email, FILTER_VALIDATE_EMAIL)) {
         $mail_check = false;
@@ -183,7 +194,7 @@ if (isset($_POST['submit'])) {
                                     <div class="correct-email">
                                         <?php
                                         if (!$name_check) {
-                                            echo "Please enter your name";
+                                            echo "Please enter your proper name or without special charecter";
                                         }
                                         ?>
                                     </div>
@@ -208,7 +219,7 @@ if (isset($_POST['submit'])) {
                                     <div class="correct-email">
                                         <?php
                                         if (!$subject_check) {
-                                            echo "Please enter subject";
+                                            echo "Please enter valid subject or without special charecter";
                                         }
                                         ?>
                                     </div>
@@ -221,7 +232,7 @@ if (isset($_POST['submit'])) {
                                     <div class="correct-email right-content">
                                         <?php
                                         if (!$des_check) {
-                                            echo "Please enter proper Comments / Questions";
+                                            echo "Please enter proper Comments / Questions or without special charecter";
                                         }
                                         ?>
                                     </div>
