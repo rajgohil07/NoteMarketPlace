@@ -703,7 +703,7 @@ if (isset($_SESSION['email'])) {
                     <div class="col-md-12">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>Country</label>
+                                <label>Country *</label>
                                 <select name="country" class="form-control options-arrow-down input-light-color"
                                     required>
                                     <?php
@@ -774,7 +774,7 @@ if (isset($_SESSION['email'])) {
                             <div class="form-group col-md-6">
                                 <label>Professor / Lecturer Name</label>
                                 <input type="text" name="professor_name" class="form-control input-light-color"
-                                    value="<?php echo $professor_name ?>" placeholder="Enter your Professor Name">
+                                    value="<?php echo $professor_name ?>" placeholder="Enter your Professor/Lecturer  Name">
                             </div>
                         </div>
                     </div>
@@ -842,7 +842,7 @@ if (isset($_SESSION['email'])) {
                                         <label>Sell price *</label>
                                         <input type="number" step=".01" name="sell_price" id="price-box"
                                             value="<?php echo $sell_price ?>" class="form-control input-light-color"
-                                            placeholder="Enter your Price" disabled>
+                                            placeholder="Enter your note Price" disabled>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
