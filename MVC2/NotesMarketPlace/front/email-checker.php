@@ -6,6 +6,5 @@ $id = mysqli_real_escape_string($con, $id);
 
 $query = "UPDATE users SET isemailverified=1 WHERE userid=$id";
 mysqli_query($con, $query);
+header("Location:log-in-page.php");
 ?>
-<h1>Email verified</h1>
-<a href="log-in-page.php">Click here to login</a>
