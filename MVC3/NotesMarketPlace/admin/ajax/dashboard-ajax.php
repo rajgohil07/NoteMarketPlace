@@ -70,7 +70,7 @@ $note_getter_result = mysqli_query($con, $note_getter);
                         <tr>
                             <td class="sr-setter"><?php echo $sr_no ?></td>
                             <td>
-                                <a href="notes-details-page.php?noteid=<?php echo $noteid ?>"
+                                <a href="notes-details-page.php?id=<?php echo $noteid ?>"
                                     title="click to open <?php echo $title ?>">
                                     <?php echo $title ?>
                                 </a>
