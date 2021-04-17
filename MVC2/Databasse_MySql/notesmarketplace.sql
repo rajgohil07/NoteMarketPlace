@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2021 at 09:51 AM
+-- Generation Time: Apr 16, 2021 at 08:55 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -80,66 +80,22 @@ CREATE TABLE `downloads` (
 --
 
 INSERT INTO `downloads` (`downloadid`, `noteid`, `seller`, `downloader`, `sellerhasalloweddownload`, `attactmentpath`, `isattachmentdownloaded`, `attactmentdownloadeddate`, `ispaid`, `purchasedprice`, `notetitle`, `notecategory`, `createddate`, `createdby`, `modifieddate`, `modifiedby`) VALUES
-(1, 34, 3, 1, b'1', '../Members/3/34/Attachements/39_1616900547.pdf', b'1', '2021-03-28 09:43:35', 1, '26.89', 'The Way We Live Now ', 'Chemistry', '2021-03-28 09:43:35', 1, '2021-03-28 09:43:35', 1),
-(2, 34, 3, 1, b'1', '../Members/3/34/Attachements/40_1616900547.pdf', b'1', '2021-03-28 09:43:35', 1, '26.89', 'The Way We Live Now ', 'Chemistry', '2021-03-28 09:43:35', 1, '2021-03-28 09:43:35', 1),
 (3, 25, 2, 1, b'1', '../Members/2/25/Attachements/25_1616900433.pdf', b'1', '2021-03-28 09:43:43', 2, '0.00', 'The Red Badge of Courage', 'CA', '2021-03-28 09:43:43', 1, '2021-03-28 09:43:43', 1),
-(4, 21, 2, 1, b'0', '../Members/2/21/Attachements/21_1616900431.pdf', b'0', '2021-03-28 09:44:16', 1, '78.45', 'Gulliver’s Travels', 'CA', '2021-03-28 09:44:16', 1, '2021-03-28 09:44:16', 1),
-(5, 43, 5, 1, b'1', '../Members/5/43/Attachements/51_1616900747.pdf', b'1', '2021-03-28 09:44:31', 2, '0.00', 'The Thirty-Nine Steps', 'CA', '2021-03-28 09:44:31', 1, '2021-03-28 09:44:31', 1),
-(6, 39, 5, 1, b'1', '../Members/5/39/Attachements/47_1616900744.pdf', b'0', '2021-03-28 09:44:52', 1, '218.32', 'Moby-ideas', 'CA', '2021-03-28 09:44:52', 1, '2021-03-28 09:44:52', 1),
-(7, 49, 6, 2, b'1', '../Members/6/49/Attachements/57_1616901126.pdf', b'1', '2021-03-28 09:45:38', 2, '0.00', 'Sister Carrie ', 'CA', '2021-03-28 09:45:38', 2, '2021-03-28 09:45:38', 2),
-(8, 42, 5, 2, b'0', '../Members/5/42/Attachements/50_1616900746.pdf', b'0', '2021-03-28 09:45:44', 1, '218.32', 'Vanity Fair', 'CA', '2021-03-28 09:45:44', 2, '2021-03-28 09:45:44', 2),
-(9, 51, 8, 2, b'1', '../Members/8/51/Attachements/59_1616901365.pdf', b'0', '2021-03-28 09:45:51', 1, '11.83', 'Gentlemen Prefer Blondes', 'CA', '2021-03-28 09:45:51', 2, '2021-03-28 09:45:51', 2),
 (10, 32, 3, 2, b'1', '../Members/3/32/Attachements/35_1616900546.pdf', b'1', '2021-03-28 09:46:09', 2, '0.00', 'Three Men in a Boat', 'Chemistry', '2021-03-28 09:46:09', 2, '2021-03-28 09:46:09', 2),
 (11, 32, 3, 2, b'1', '../Members/3/32/Attachements/36_1616900546.pdf', b'1', '2021-03-28 09:46:09', 2, '0.00', 'Three Men in a Boat', 'Chemistry', '2021-03-28 09:46:09', 2, '2021-03-28 09:46:09', 2),
-(12, 12, 1, 3, b'0', '../Members/1/12/Attachements/12_1616900176.pdf', b'0', '2021-03-28 09:46:51', 1, '45.67', 'The Narrative of Arthur Gordon Pym of Nantucket', 'IT', '2021-03-28 09:46:51', 3, '2021-03-28 09:46:51', 3),
 (13, 22, 2, 3, b'1', '../Members/2/22/Attachements/22_1616900432.pdf', b'1', '2021-03-28 09:46:55', 2, '0.00', ' Robinson Crusoe', 'CA', '2021-03-28 09:46:55', 3, '2021-03-28 09:46:55', 3),
-(14, 46, 6, 3, b'1', '../Members/6/46/Attachements/54_1616901125.pdf', b'1', '2021-03-28 09:47:04', 2, '0.00', 'Hadrian the Seventh ', 'CA', '2021-03-28 09:47:04', 3, '2021-03-28 09:47:04', 3),
-(15, 51, 8, 3, b'0', '../Members/8/51/Attachements/59_1616901365.pdf', b'0', '2021-03-28 09:47:12', 1, '11.83', 'Gentlemen Prefer Blondes', 'CA', '2021-03-28 09:47:12', 3, '2021-03-28 09:47:12', 3),
-(16, 27, 2, 3, b'0', '../Members/2/27/Attachements/27_1616900434.pdf', b'0', '2021-03-28 09:47:33', 1, '78.45', 'Jude the Obscure', 'CA', '2021-03-28 09:47:33', 3, '2021-03-28 09:47:33', 3),
 (17, 25, 2, 4, b'1', '../Members/2/25/Attachements/25_1616900433.pdf', b'1', '2021-03-28 09:48:22', 2, '0.00', 'The Red Badge of Courage', 'CA', '2021-03-28 09:48:22', 4, '2021-03-28 09:48:22', 4),
-(18, 52, 8, 4, b'1', '../Members/8/52/Attachements/60_1616901366.pdf', b'1', '2021-03-28 09:48:37', 2, '0.00', 'A Passage to India', 'CA', '2021-03-28 09:48:37', 4, '2021-03-28 09:48:37', 4),
-(19, 20, 2, 4, b'1', '../Members/2/20/Attachements/20_1616900431.pdf', b'1', '2021-03-28 09:48:44', 2, '0.00', ' Clarissa', 'CA', '2021-03-28 09:48:44', 4, '2021-03-28 09:48:44', 4),
-(20, 13, 1, 4, b'1', '../Members/1/13/Attachements/13_1616900176.pdf', b'1', '2021-03-28 09:48:54', 2, '0.00', 'Nightmare Abbey', 'IT', '2021-03-28 09:48:54', 4, '2021-03-28 09:48:54', 4),
-(21, 42, 5, 4, b'0', '../Members/5/42/Attachements/50_1616900746.pdf', b'0', '2021-03-28 09:48:59', 1, '218.32', 'Vanity Fair', 'CA', '2021-03-28 09:48:59', 4, '2021-03-28 09:48:59', 4),
-(22, 22, 2, 5, b'1', '../Members/2/22/Attachements/22_1616900432.pdf', b'1', '2021-03-28 09:49:35', 2, '0.00', ' Robinson Crusoe', 'CA', '2021-03-28 09:49:35', 5, '2021-03-28 09:49:35', 5),
 (23, 12, 1, 5, b'1', '../Members/1/12/Attachements/12_1616900176.pdf', b'0', '2021-03-28 10:15:26', 1, '45.67', 'The Narrative of Arthur Gordon Pym of Nantucket', 'IT', '2021-03-28 10:15:26', 5, '2021-03-28 10:15:26', 5),
 (24, 14, 1, 5, b'1', '../Members/1/14/Attachements/14_1616900177.pdf', b'1', '2021-03-28 10:15:36', 1, '23.54', 'Frankenstein', 'IT', '2021-03-28 10:15:36', 5, '2021-03-28 10:15:36', 5),
-(25, 52, 8, 5, b'1', '../Members/8/52/Attachements/60_1616901366.pdf', b'1', '2021-03-28 10:15:43', 2, '0.00', 'A Passage to India', 'CA', '2021-03-28 10:15:43', 5, '2021-03-28 10:15:43', 5),
-(26, 55, 8, 6, b'1', '../Members/8/55/Attachements/63_1616901367.pdf', b'1', '2021-03-28 10:16:16', 2, '0.00', ' The Rainbow', 'CA', '2021-03-28 10:16:16', 6, '2021-03-28 10:16:16', 6),
-(27, 52, 8, 6, b'1', '../Members/8/52/Attachements/60_1616901366.pdf', b'1', '2021-03-28 10:16:22', 2, '0.00', 'A Passage to India', 'CA', '2021-03-28 10:16:22', 6, '2021-03-28 10:16:22', 6),
-(28, 42, 5, 6, b'0', '../Members/5/42/Attachements/50_1616900746.pdf', b'0', '2021-03-28 10:16:30', 1, '218.32', 'Vanity Fair', 'CA', '2021-03-28 10:16:30', 6, '2021-03-28 10:16:30', 6),
-(29, 20, 2, 6, b'1', '../Members/2/20/Attachements/20_1616900431.pdf', b'1', '2021-03-28 10:16:38', 2, '0.00', ' Clarissa', 'CA', '2021-03-28 10:16:38', 6, '2021-03-28 10:16:38', 6),
-(30, 51, 8, 6, b'0', '../Members/8/51/Attachements/59_1616901365.pdf', b'0', '2021-03-28 10:16:47', 1, '11.83', 'Gentlemen Prefer Blondes', 'CA', '2021-03-28 10:16:47', 6, '2021-03-28 10:16:47', 6),
-(31, 53, 8, 6, b'1', '../Members/8/53/Attachements/61_1616901366.pdf', b'1', '2021-03-28 10:17:25', 2, '0.00', 'The Age of Innocence', 'CA', '2021-03-28 10:17:25', 6, '2021-03-28 10:17:25', 6),
 (32, 13, 1, 6, b'1', '../Members/1/13/Attachements/13_1616900176.pdf', b'1', '2021-03-28 10:17:40', 2, '0.00', 'Nightmare Abbey', 'IT', '2021-03-28 10:17:40', 6, '2021-03-28 10:17:40', 6),
-(33, 6, 1, 6, b'0', '../Members/1/6/Attachements/6_1616900096.pdf', b'0', '2021-03-28 10:17:51', 1, '72.18', 'David Copperfield', 'MBA', '2021-03-28 10:17:51', 6, '2021-03-28 10:17:51', 6),
-(34, 53, 8, 7, b'1', '../Members/8/53/Attachements/61_1616901366.pdf', b'1', '2021-03-28 10:18:37', 2, '0.00', 'The Age of Innocence', 'CA', '2021-03-28 10:18:37', 7, '2021-03-28 10:18:37', 7),
-(35, 52, 8, 7, b'1', '../Members/8/52/Attachements/60_1616901366.pdf', b'1', '2021-03-28 10:18:42', 2, '0.00', 'A Passage to India', 'CA', '2021-03-28 10:18:42', 7, '2021-03-28 10:18:42', 7),
-(36, 12, 1, 7, b'0', '../Members/1/12/Attachements/12_1616900176.pdf', b'0', '2021-03-28 10:18:49', 1, '45.67', 'The Narrative of Arthur Gordon Pym of Nantucket', 'IT', '2021-03-28 10:18:49', 7, '2021-03-28 10:18:49', 7),
-(37, 46, 6, 7, b'1', '../Members/6/46/Attachements/54_1616901125.pdf', b'1', '2021-03-28 10:18:58', 2, '0.00', 'Hadrian the Seventh ', 'CA', '2021-03-28 10:18:58', 7, '2021-03-28 10:18:58', 7),
-(38, 35, 3, 7, b'1', '../Members/3/35/Attachements/41_1616900547.pdf', b'1', '2021-03-28 10:19:05', 2, '0.00', 'Little Women', 'Chemistry', '2021-03-28 10:19:05', 7, '2021-03-28 10:19:05', 7),
-(39, 35, 3, 7, b'1', '../Members/3/35/Attachements/42_1616900547.pdf', b'1', '2021-03-28 10:19:05', 2, '0.00', 'Little Women', 'Chemistry', '2021-03-28 10:19:05', 7, '2021-03-28 10:19:05', 7),
 (40, 27, 2, 7, b'1', '../Members/2/27/Attachements/27_1616900434.pdf', b'0', '2021-03-28 10:19:15', 1, '78.45', 'Jude the Obscure', 'CA', '2021-03-28 10:19:15', 7, '2021-03-28 10:19:15', 7),
 (41, 33, 3, 7, b'1', '../Members/3/33/Attachements/37_1616900546.pdf', b'0', '2021-03-28 10:19:22', 1, '267.49', 'Kidnapped', 'Chemistry', '2021-03-28 10:19:22', 7, '2021-03-28 10:19:22', 7),
 (42, 33, 3, 7, b'1', '../Members/3/33/Attachements/38_1616900546.pdf', b'0', '2021-03-28 10:19:22', 1, '267.49', 'Kidnapped', 'Chemistry', '2021-03-28 10:19:22', 7, '2021-03-28 10:19:22', 7),
 (43, 42, 5, 8, b'1', '../Members/5/42/Attachements/50_1616900746.pdf', b'0', '2021-03-28 10:20:00', 1, '218.32', 'Vanity Fair', 'CA', '2021-03-28 10:20:00', 8, '2021-03-28 10:20:00', 8),
-(44, 40, 5, 8, b'1', '../Members/5/40/Attachements/48_1616900745.pdf', b'1', '2021-03-28 10:20:11', 2, '0.00', 'The Scarlet Letter', 'CA', '2021-03-28 10:20:11', 8, '2021-03-28 10:20:11', 8),
-(45, 49, 6, 8, b'1', '../Members/6/49/Attachements/57_1616901126.pdf', b'1', '2021-03-28 10:20:23', 2, '0.00', 'Sister Carrie ', 'CA', '2021-03-28 10:20:23', 8, '2021-03-28 10:20:23', 8),
 (46, 34, 3, 8, b'1', '../Members/3/34/Attachements/39_1616900547.pdf', b'1', '2021-03-28 10:20:32', 1, '26.89', 'The Way We Live Now ', 'Chemistry', '2021-03-28 10:20:32', 8, '2021-03-28 10:20:32', 8),
 (47, 34, 3, 8, b'1', '../Members/3/34/Attachements/40_1616900547.pdf', b'1', '2021-03-28 10:20:32', 1, '26.89', 'The Way We Live Now ', 'Chemistry', '2021-03-28 10:20:32', 8, '2021-03-28 10:20:32', 8),
 (48, 14, 1, 8, b'1', '../Members/1/14/Attachements/14_1616900177.pdf', b'1', '2021-03-28 10:20:41', 1, '23.54', 'Frankenstein', 'IT', '2021-03-28 10:20:41', 8, '2021-03-28 10:20:41', 8),
-(49, 22, 2, 8, b'1', '../Members/2/22/Attachements/22_1616900432.pdf', b'1', '2021-03-28 10:20:47', 2, '0.00', ' Robinson Crusoe', 'CA', '2021-03-28 10:20:47', 8, '2021-03-28 10:20:47', 8),
-(50, 25, 2, 8, b'1', '../Members/2/25/Attachements/25_1616900433.pdf', b'1', '2021-03-28 10:20:56', 2, '0.00', 'The Red Badge of Courage', 'CA', '2021-03-28 10:20:56', 8, '2021-03-28 10:20:56', 8),
-(51, 45, 6, 8, b'0', '../Members/6/45/Attachements/53_1616901123.pdf', b'0', '2021-03-28 10:21:06', 1, '27.47', 'The History of Mr Polly', 'CA', '2021-03-28 10:21:06', 8, '2021-03-28 10:21:06', 8),
-(52, 47, 6, 8, b'1', '../Members/6/47/Attachements/55_1616901125.pdf', b'1', '2021-03-28 10:21:21', 2, '0.00', 'The Golden Bowl', 'CA', '2021-03-28 10:21:21', 8, '2021-03-28 10:21:21', 8),
-(53, 21, 2, 8, b'0', '../Members/2/21/Attachements/21_1616900431.pdf', b'0', '2021-03-28 10:21:31', 1, '78.45', 'Gulliver’s Travels', 'CA', '2021-03-28 10:21:31', 8, '2021-03-28 10:21:31', 8),
-(54, 32, 3, 8, b'1', '../Members/3/32/Attachements/35_1616900546.pdf', b'1', '2021-03-28 10:21:39', 2, '0.00', 'Three Men in a Boat', 'Chemistry', '2021-03-28 10:21:39', 8, '2021-03-28 10:21:39', 8),
-(55, 32, 3, 8, b'1', '../Members/3/32/Attachements/36_1616900546.pdf', b'1', '2021-03-28 10:21:39', 2, '0.00', 'Three Men in a Boat', 'Chemistry', '2021-03-28 10:21:39', 8, '2021-03-28 10:21:39', 8),
 (56, 9, 1, 8, b'1', '../Members/1/9/Attachements/9_1616900170.pdf', b'0', '2021-03-28 10:21:48', 1, '45.67', 'Jane Eyre', 'IT', '2021-03-28 10:21:48', 8, '2021-03-28 10:21:48', 8),
-(57, 6, 1, 8, b'0', '../Members/1/6/Attachements/6_1616900096.pdf', b'0', '2021-03-28 10:22:05', 1, '72.18', 'David Copperfield', 'MBA', '2021-03-28 10:22:05', 8, '2021-03-28 10:22:05', 8),
-(58, 33, 3, 8, b'0', '../Members/3/33/Attachements/37_1616900546.pdf', b'0', '2021-03-28 10:22:28', 1, '267.49', 'Kidnapped', 'Chemistry', '2021-03-28 10:22:28', 8, '2021-03-28 10:22:28', 8),
-(59, 33, 3, 8, b'0', '../Members/3/33/Attachements/38_1616900546.pdf', b'0', '2021-03-28 10:22:28', 1, '267.49', 'Kidnapped', 'Chemistry', '2021-03-28 10:22:28', 8, '2021-03-28 10:22:28', 8),
-(60, 46, 6, 8, b'1', '../Members/6/46/Attachements/54_1616901125.pdf', b'1', '2021-03-28 10:22:35', 2, '0.00', 'Hadrian the Seventh ', 'CA', '2021-03-28 10:22:35', 8, '2021-03-28 10:22:35', 8),
 (61, 58, 7, 12, b'1', '../Members/7/58/Attachements/67_1616908443.pdf', b'1', '2021-03-28 11:08:17', 2, '0.00', 'History of china', 'Hitroy', '2021-03-28 11:00:45', 12, '2021-03-28 11:00:45', 12),
 (62, 55, 8, 12, b'1', '../Members/8/55/Attachements/63_1616901367.pdf', b'1', '2021-03-28 11:00:51', 2, '0.00', ' The Rainbow', 'CA', '2021-03-28 11:00:51', 12, '2021-03-28 11:00:51', 12),
 (63, 53, 8, 12, b'1', '../Members/8/53/Attachements/61_1616901366.pdf', b'1', '2021-03-28 11:00:56', 2, '0.00', 'The Age of Innocence', 'CA', '2021-03-28 11:00:56', 12, '2021-03-28 11:00:56', 12),
@@ -173,10 +129,7 @@ INSERT INTO `downloads` (`downloadid`, `noteid`, `seller`, `downloader`, `seller
 (91, 3, 1, 13, b'1', '../Members/1/3/Attachements/3_1616900094.pdf', b'0', '2021-03-28 11:12:07', 1, '72.18', 'Adventures of Huckleberry Finn.', 'MBA', '2021-03-28 11:12:07', 13, '2021-03-28 11:12:07', 13),
 (92, 34, 3, 13, b'0', '../Members/3/34/Attachements/39_1616900547.pdf', b'0', '2021-03-28 11:24:24', 1, '26.89', 'The Way We Live Now ', 'Chemistry', '2021-03-28 11:24:24', 13, '2021-03-28 11:24:24', 13),
 (93, 34, 3, 13, b'0', '../Members/3/34/Attachements/40_1616900547.pdf', b'0', '2021-03-28 11:24:24', 1, '26.89', 'The Way We Live Now ', 'Chemistry', '2021-03-28 11:24:24', 13, '2021-03-28 11:24:24', 13),
-(94, 1, 1, 13, b'0', '../Members/1/1/Attachements/1_1616900092.pdf', b'0', '2021-03-28 11:46:29', 1, '11.56', 'the girl on the train', 'MBA', '2021-03-28 11:46:29', 13, '2021-03-28 11:46:29', 13),
-(95, 58, 7, 1, b'1', '../Members/7/58/Attachements/67_1616908443.pdf', b'1', '2021-03-28 11:53:31', 2, '0.00', 'History of china', 'Hitroy', '2021-03-28 11:53:31', 1, '2021-03-28 11:53:31', 1),
-(96, 58, 7, 8, b'1', '../Members/7/58/Attachements/67_1616908443.pdf', b'1', '2021-03-28 11:55:56', 2, '0.00', 'History of china', 'Hitroy', '2021-03-28 11:55:56', 8, '2021-03-28 11:55:56', 8),
-(97, 55, 8, 10, b'1', '../Members/8/55/Attachements/63_1616901367.pdf', b'1', '2021-03-28 13:19:57', 2, '0.00', ' The Rainbow', 'CA', '2021-03-28 13:19:57', 10, '2021-03-28 13:19:57', 10);
+(94, 1, 1, 13, b'0', '../Members/1/1/Attachements/1_1616900092.pdf', b'0', '2021-03-28 11:46:29', 1, '11.56', 'the girl on the train', 'MBA', '2021-03-28 11:46:29', 13, '2021-03-28 11:46:29', 13);
 
 -- --------------------------------------------------------
 
@@ -312,9 +265,9 @@ INSERT INTO `sellernotes` (`noteid`, `sellerid`, `status`, `actionedby`, `admin_
 (2, 1, 4, NULL, NULL, '2021-03-28 08:43:51', 'Ulysses', 1, '../Members/1/2/DP_1616900094.jpg', 1, 71, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 1, 'reading', 'NKJ23u8', 'Vijay Vaishnav', 2, '0.00', '../Members/1/2/Preview_1616900094.pdf', '2021-03-28 08:24:54', 1, '2021-03-28 08:24:54', NULL, b'1'),
 (3, 1, 6, NULL, NULL, '2021-03-28 08:43:51', 'Adventures of Huckleberry Finn.', 1, '../Members/1/3/DP_1616900094.jpg', 1, 71, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 1, 'reading', 'NKJ23u8', 'Vijay Vaishnav', 1, '72.18', '../Members/1/3/Preview_1616900094.pdf', '2021-03-28 08:24:54', 1, '2021-03-28 08:24:54', NULL, b'1'),
 (4, 1, 6, NULL, NULL, '2021-03-28 08:43:51', 'Wuthering Heights', 1, '../Members/1/4/DP_1616900095.jpg', 1, 71, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 1, 'reading', 'NKJ23u8', 'Vijay Vaishnav', 2, '0.00', '../Members/1/4/Preview_1616900095.pdf', '2021-03-28 08:24:55', 1, '2021-03-28 08:24:55', NULL, b'1'),
-(5, 1, 7, NULL, NULL, '2021-03-28 08:43:51', 'Emma', 1, '../Members/1/5/DP_1616900095.jpg', 1, 71, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 1, 'reading', 'NKJ23u8', 'Vijay Vaishnav', 1, '7.68', '../Members/1/5/Preview_1616900095.pdf', '2021-03-28 08:24:55', 1, '2021-03-28 08:24:55', NULL, b'1'),
+(5, 1, 7, 11, 'not proper', '2021-03-28 08:43:51', 'Emma', 1, '../Members/1/5/DP_1616900095.jpg', 1, 71, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 1, 'reading', 'NKJ23u8', 'Vijay Vaishnav', 1, '7.68', '../Members/1/5/Preview_1616900095.pdf', '2021-03-28 08:24:55', 1, '2021-03-28 08:24:55', NULL, b'1'),
 (6, 1, 6, NULL, NULL, '2021-03-28 08:43:51', 'David Copperfield', 1, '../Members/1/6/DP_1616900096.jpg', 1, 71, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 1, 'reading', 'NKJ23u8', 'Vijay Vaishnav', 1, '72.18', '../Members/1/6/Preview_1616900096.pdf', '2021-03-28 08:24:56', 1, '2021-03-28 08:24:56', NULL, b'1'),
-(8, 1, 7, NULL, NULL, '2021-03-28 08:43:51', 'Vanity Fair', 1, '../Members/1/8/DP_1616900097.jpg', 1, 71, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 1, 'reading', 'NKJ23u8', 'Vijay Vaishnav', 2, '0.00', '../Members/1/8/Preview_1616900097.pdf', '2021-03-28 08:24:57', 1, '2021-03-28 08:24:57', NULL, b'1'),
+(8, 1, 7, 11, 'not proper', '2021-03-28 08:43:51', 'Vanity Fair', 1, '../Members/1/8/DP_1616900097.jpg', 1, 71, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 1, 'reading', 'NKJ23u8', 'Vijay Vaishnav', 2, '0.00', '../Members/1/8/Preview_1616900097.pdf', '2021-03-28 08:24:57', 1, '2021-03-28 08:24:57', NULL, b'1'),
 (9, 1, 6, NULL, NULL, '2021-03-28 08:43:51', 'Jane Eyre', 2, '../Members/1/9/DP_1616900170.jpg', 2, 90, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 2, 'reading', '89u2', 'Vijay Vaishnav', 1, '45.67', '../Members/1/9/Preview_1616900170.pdf', '2021-03-28 08:26:10', 1, '2021-03-28 08:26:10', NULL, b'1'),
 (10, 1, 6, NULL, NULL, '2021-03-28 08:43:51', 'Sybil ', 2, '../Members/1/10/DP_1616900175.jpg', 2, 90, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 2, 'reading', '89u2', 'Vijay Vaishnav', 2, '0.00', '../Members/1/10/Preview_1616900175.pdf', '2021-03-28 08:26:15', 1, '2021-03-28 08:26:15', NULL, b'1'),
 (12, 1, 6, NULL, NULL, '2021-03-28 08:43:51', 'The Narrative of Arthur Gordon Pym of Nantucket', 2, '../Members/1/12/DP_1616900176.jpg', 2, 90, 'This quotation for Faulkner’s 1936 novel comes from the Books of Samuel, which is in the Old Testament', 'spaceX', 2, 'reading', '89u2', 'Vijay Vaishnav', 1, '45.67', '../Members/1/12/Preview_1616900176.pdf', '2021-03-28 08:26:16', 1, '2021-03-28 08:26:16', NULL, b'1'),
@@ -326,17 +279,17 @@ INSERT INTO `sellernotes` (`noteid`, `sellerid`, `status`, `actionedby`, `admin_
 (20, 2, 6, NULL, NULL, '2021-03-28 08:43:51', ' Clarissa', 3, '../Members/2/20/DP_1616900431.jpg', 3, 189, 'More Ecclesiastes! This particular quotation is from 1:5, which states that The sun also ariseth,', 'spaceX', 3, 'reading', 'FEBK29', 'ERNEST HEMINGWAY', 2, '0.00', '../Members/2/20/Preview_1616900431.pdf', '2021-03-28 08:30:31', 2, '2021-03-28 08:30:31', NULL, b'1'),
 (21, 2, 6, NULL, NULL, '2021-03-28 08:43:51', 'Gulliver’s Travels', 3, '../Members/2/21/DP_1616900431.jpg', 3, 189, 'More Ecclesiastes! This particular quotation is from 1:5, which states that The sun also ariseth,', 'spaceX', 3, 'reading', 'FEBK29', 'ERNEST HEMINGWAY', 1, '78.45', '../Members/2/21/Preview_1616900431.pdf', '2021-03-28 08:30:31', 2, '2021-03-28 08:30:31', NULL, b'1'),
 (22, 2, 6, NULL, NULL, '2021-03-28 08:43:51', ' Robinson Crusoe', 3, '../Members/2/22/DP_1616900432.jpg', 3, 189, 'More Ecclesiastes! This particular quotation is from 1:5, which states that The sun also ariseth,', 'spaceX', 3, 'reading', 'FEBK29', 'ERNEST HEMINGWAY', 2, '0.00', '../Members/2/22/Preview_1616900432.pdf', '2021-03-28 08:30:32', 2, '2021-03-28 08:30:32', NULL, b'1'),
-(24, 2, 7, NULL, NULL, '2021-03-28 08:43:51', ' Dracula', 3, '../Members/2/24/DP_1616900433.jpg', 3, 189, 'More Ecclesiastes! This particular quotation is from 1:5, which states that The sun also ariseth,', 'spaceX', 3, 'reading', 'FEBK29', 'ERNEST HEMINGWAY', 1, '78.45', '../Members/2/24/Preview_1616900433.pdf', '2021-03-28 08:30:33', 2, '2021-03-28 08:30:33', NULL, b'1'),
+(24, 2, 7, 11, 'not proper', '2021-03-28 08:43:51', ' Dracula', 3, '../Members/2/24/DP_1616900433.jpg', 3, 189, 'More Ecclesiastes! This particular quotation is from 1:5, which states that The sun also ariseth,', 'spaceX', 3, 'reading', 'FEBK29', 'ERNEST HEMINGWAY', 1, '78.45', '../Members/2/24/Preview_1616900433.pdf', '2021-03-28 08:30:33', 2, '2021-03-28 08:30:33', NULL, b'1'),
 (25, 2, 6, NULL, NULL, '2021-03-28 08:43:51', 'The Red Badge of Courage', 3, '../Members/2/25/DP_1616900433.jpg', 3, 189, 'More Ecclesiastes! This particular quotation is from 1:5, which states that The sun also ariseth,', 'spaceX', 3, 'reading', 'FEBK29', 'ERNEST HEMINGWAY', 2, '0.00', '../Members/2/25/Preview_1616900433.pdf', '2021-03-28 08:30:33', 2, '2021-03-28 08:30:33', NULL, b'1'),
 (27, 2, 6, NULL, NULL, '2021-03-28 08:43:51', 'Jude the Obscure', 3, '../Members/2/27/DP_1616900434.jpg', 3, 189, 'More Ecclesiastes! This particular quotation is from 1:5, which states that The sun also ariseth,', 'spaceX', 3, 'reading', 'FEBK29', 'ERNEST HEMINGWAY', 1, '78.45', '../Members/2/27/Preview_1616900434.pdf', '2021-03-28 08:30:34', 2, '2021-03-28 08:30:34', NULL, b'1'),
 (28, 2, 5, NULL, NULL, '2021-03-28 08:43:51', 'New Grub Street', 3, '../Members/2/28/DP_1616900435.jpg', 3, 189, 'More Ecclesiastes! This particular quotation is from 1:5, which states that The sun also ariseth,', 'spaceX', 3, 'reading', 'FEBK29', 'ERNEST HEMINGWAY', 2, '0.00', '../Members/2/28/Preview_1616900435.pdf', '2021-03-28 08:30:35', 2, '2021-03-28 08:30:35', NULL, b'1'),
 (29, 3, 3, NULL, NULL, '2021-03-28 08:43:51', 'The Picture of Dorian Gray', 5, '../Members/3/29/DP_1616900543.jpg', 4, 167, 'Waugh took the title for his 1930 novel from Philippians', 'spaceX', 5, 'work shop', 'af928', 'Vijay Vaishnav', 2, '0.00', '../Members/3/29/Preview_1616900543.pdf', '2021-03-28 08:32:23', 3, '2021-03-28 08:32:23', NULL, b'1'),
-(31, 3, 7, NULL, NULL, '2021-03-28 08:43:51', 'The Sign of Four', 5, '../Members/3/31/DP_1616900545.jpg', 4, 167, 'Waugh took the title for his 1930 novel from Philippians', 'spaceX', 5, 'work shop', 'af928', 'Vijay Vaishnav', 2, '0.00', '../Members/3/31/Preview_1616900545.pdf', '2021-03-28 08:32:25', 3, '2021-03-28 08:32:25', NULL, b'1'),
+(31, 3, 7, 11, 'not proper', '2021-03-28 08:43:51', 'The Sign of Four', 5, '../Members/3/31/DP_1616900545.jpg', 4, 167, 'Waugh took the title for his 1930 novel from Philippians', 'spaceX', 5, 'work shop', 'af928', 'Vijay Vaishnav', 2, '0.00', '../Members/3/31/Preview_1616900545.pdf', '2021-03-28 08:32:25', 3, '2021-03-28 08:32:25', NULL, b'1'),
 (32, 3, 6, NULL, NULL, '2021-03-28 08:43:51', 'Three Men in a Boat', 5, '../Members/3/32/DP_1616900546.jpg', 4, 167, 'Waugh took the title for his 1930 novel from Philippians', 'spaceX', 5, 'work shop', 'af928', 'Vijay Vaishnav', 2, '0.00', '../Members/3/32/Preview_1616900546.pdf', '2021-03-28 08:32:26', 3, '2021-03-28 08:32:26', NULL, b'1'),
 (33, 3, 6, NULL, NULL, '2021-03-28 08:43:51', 'Kidnapped', 5, '../Members/3/33/DP_1616900546.jpg', 4, 167, 'Waugh took the title for his 1930 novel from Philippians', 'spaceX', 5, 'work shop', 'af928', 'Vijay Vaishnav', 1, '267.49', '../Members/3/33/Preview_1616900546.pdf', '2021-03-28 08:32:26', 3, '2021-03-28 08:32:26', NULL, b'1'),
 (34, 3, 6, NULL, NULL, '2021-03-28 08:43:51', 'The Way We Live Now ', 5, '../Members/3/34/DP_1616900547.jpg', 4, 167, 'Waugh took the title for his 1930 novel from Philippians', 'spaceX', 5, 'work shop', 'af928', 'Vijay Vaishnav', 1, '26.89', '../Members/3/34/Preview_1616900547.pdf', '2021-03-28 08:32:27', 3, '2021-03-28 08:32:27', NULL, b'1'),
 (35, 3, 6, NULL, NULL, '2021-03-28 08:43:51', 'Little Women', 5, '../Members/3/35/DP_1616900547.jpg', 4, 167, 'Waugh took the title for his 1930 novel from Philippians', 'spaceX', 5, 'work shop', 'af928', 'Vijay Vaishnav', 2, '0.00', '../Members/3/35/Preview_1616900547.pdf', '2021-03-28 08:32:27', 3, '2021-03-28 08:32:27', NULL, b'1'),
-(36, 3, 7, NULL, NULL, '2021-03-28 08:43:51', 'The Moonstone', 5, '../Members/3/36/DP_1616900548.jpg', 4, 167, 'Waugh took the title for his 1930 novel from Philippians', 'spaceX', 5, 'work shop', 'af928', 'Vijay Vaishnav', 1, '267.49', '../Members/3/36/Preview_1616900548.pdf', '2021-03-28 08:32:28', 3, '2021-03-28 08:32:28', NULL, b'1'),
+(36, 3, 7, 11, 'not proper', '2021-03-28 08:43:51', 'The Moonstone', 5, '../Members/3/36/DP_1616900548.jpg', 4, 167, 'Waugh took the title for his 1930 novel from Philippians', 'spaceX', 5, 'work shop', 'af928', 'Vijay Vaishnav', 1, '267.49', '../Members/3/36/Preview_1616900548.pdf', '2021-03-28 08:32:28', 3, '2021-03-28 08:32:28', NULL, b'1'),
 (38, 5, 3, NULL, NULL, '2021-03-28 08:43:51', 'Alice’s Adventures in Wonderland', 3, '../Members/5/38/DP_1616900744.jpg', 3, 187, 'Undoubtedly an odd quotation', 'tatvasoft Institution ', 2, 'cooking', 'BSUb12', 'STEPHEN FRY', 2, '0.00', '../Members/5/38/Preview_1616900744.pdf', '2021-03-28 08:35:44', 5, '2021-03-28 08:35:44', NULL, b'1'),
 (39, 5, 6, NULL, NULL, '2021-03-28 08:43:51', 'Moby-ideas', 3, '../Members/5/39/DP_1616900744.jpg', 3, 187, 'Undoubtedly an odd quotation', 'tatvasoft Institution ', 2, 'cooking', 'BSUb12', 'STEPHEN FRY', 1, '218.32', '../Members/5/39/Preview_1616900744.pdf', '2021-03-28 08:35:44', 5, '2021-03-28 08:35:44', NULL, b'1'),
 (40, 5, 6, NULL, NULL, '2021-03-28 08:43:51', 'The Scarlet Letter', 3, '../Members/5/40/DP_1616900745.jpg', 3, 187, 'Undoubtedly an odd quotation', 'tatvasoft Institution ', 2, 'cooking', 'BSUb12', 'STEPHEN FRY', 2, '0.00', '../Members/5/40/Preview_1616900745.pdf', '2021-03-28 08:35:45', 5, '2021-03-28 08:35:45', NULL, b'1'),
@@ -346,13 +299,13 @@ INSERT INTO `sellernotes` (`noteid`, `sellerid`, `status`, `actionedby`, `admin_
 (45, 6, 6, NULL, NULL, '2021-03-28 08:43:51', 'The History of Mr Polly', 3, '../Members/6/45/DP_1616901123.jpg', 2, 189, 'Although she’s most famous for her dystopian novel The Giver,', 'sparsh tech', 1, 'work shop', 'BFu8129', ' LOIS LOWRY', 1, '27.47', '../Members/6/45/Preview_1616901123.pdf', '2021-03-28 08:42:03', 6, '2021-03-28 08:42:03', NULL, b'1'),
 (46, 6, 6, NULL, NULL, '2021-03-28 08:43:51', 'Hadrian the Seventh ', 3, '../Members/6/46/DP_1616901125.jpg', 2, 189, 'Although she’s most famous for her dystopian novel The Giver,', 'sparsh tech', 1, 'work shop', 'BFu8129', ' LOIS LOWRY', 2, '0.00', '../Members/6/46/Preview_1616901125.pdf', '2021-03-28 08:42:05', 6, '2021-03-28 08:42:05', NULL, b'1'),
 (47, 6, 6, NULL, NULL, '2021-03-28 08:43:51', 'The Golden Bowl', 3, '../Members/6/47/DP_1616901125.jpg', 2, 189, 'Although she’s most famous for her dystopian novel The Giver,', 'sparsh tech', 1, 'work shop', 'BFu8129', ' LOIS LOWRY', 2, '0.00', '../Members/6/47/Preview_1616901125.pdf', '2021-03-28 08:42:05', 6, '2021-03-28 08:42:05', NULL, b'1'),
-(48, 6, 7, NULL, NULL, '2021-03-28 08:43:51', 'The Call of the Wild', 3, '../Members/6/48/DP_1616901126.jpg', 2, 189, 'Although she’s most famous for her dystopian novel The Giver,', 'sparsh tech', 1, 'work shop', 'BFu8129', ' LOIS LOWRY', 1, '27.47', '../Members/6/48/Preview_1616901126.pdf', '2021-03-28 08:42:06', 6, '2021-03-28 08:42:06', NULL, b'1'),
+(48, 6, 7, 11, 'not proper', '2021-03-28 08:43:51', 'The Call of the Wild', 3, '../Members/6/48/DP_1616901126.jpg', 2, 189, 'Although she’s most famous for her dystopian novel The Giver,', 'sparsh tech', 1, 'work shop', 'BFu8129', ' LOIS LOWRY', 1, '27.47', '../Members/6/48/Preview_1616901126.pdf', '2021-03-28 08:42:06', 6, '2021-03-28 08:42:06', NULL, b'1'),
 (49, 6, 6, NULL, NULL, '2021-03-28 08:43:51', 'Sister Carrie ', 3, '../Members/6/49/DP_1616901126.jpg', 2, 189, 'Although she’s most famous for her dystopian novel The Giver,', 'sparsh tech', 1, 'work shop', 'BFu8129', ' LOIS LOWRY', 2, '0.00', '../Members/6/49/Preview_1616901126.pdf', '2021-03-28 08:42:06', 6, '2021-03-28 08:42:06', NULL, b'1'),
 (50, 6, 3, NULL, NULL, '2021-03-28 08:43:51', 'Heart of Darkness', 3, '../Members/6/50/DP_1616901127.jpg', 2, 189, 'Although she’s most famous for her dystopian novel The Giver,', 'sparsh tech', 1, 'work shop', 'BFu8129', ' LOIS LOWRY', 2, '0.00', '../Members/6/50/Preview_1616901127.pdf', '2021-03-28 08:42:07', 6, '2021-03-28 08:42:07', NULL, b'1'),
 (51, 8, 6, NULL, NULL, '2021-03-28 08:50:22', 'Gentlemen Prefer Blondes', 3, '../Members/8/51/DP_1616901365.jpg', 3, 287, 'She says this when encountering new arrivals to her island for the first time in her life', 'Google', 6, 'cooking', 'FBUI2198', 'ALDOUS HUXLEY', 1, '11.83', '../Members/8/51/Preview_1616901365.pdf', '2021-03-28 08:46:05', 8, '2021-03-28 08:46:05', NULL, b'1'),
 (52, 8, 6, NULL, NULL, '2021-03-28 08:50:22', 'A Passage to India', 3, '../Members/8/52/DP_1616901366.jpg', 3, 287, 'She says this when encountering new arrivals to her island for the first time in her life', 'Google', 6, 'cooking', 'FBUI2198', 'ALDOUS HUXLEY', 2, '0.00', '../Members/8/52/Preview_1616901366.pdf', '2021-03-28 08:46:06', 8, '2021-03-28 08:46:06', NULL, b'1'),
 (53, 8, 6, NULL, NULL, '2021-03-28 08:50:22', 'The Age of Innocence', 3, '../Members/8/53/DP_1616901366.jpg', 3, 287, 'She says this when encountering new arrivals to her island for the first time in her life', 'Google', 6, 'cooking', 'FBUI2198', 'ALDOUS HUXLEY', 2, '0.00', '../Members/8/53/Preview_1616901366.pdf', '2021-03-28 08:46:06', 8, '2021-03-28 08:46:06', NULL, b'1'),
-(54, 8, 7, NULL, NULL, '2021-03-28 08:50:22', 'Of Human Bondage', 3, '../Members/8/54/DP_1616901367.jpg', 3, 287, 'She says this when encountering new arrivals to her island for the first time in her life', 'Google', 6, 'cooking', 'FBUI2198', 'ALDOUS HUXLEY', 1, '11.83', '../Members/8/54/Preview_1616901367.pdf', '2021-03-28 08:46:07', 8, '2021-03-28 08:46:07', NULL, b'1'),
+(54, 8, 7, 11, 'not proper', '2021-03-28 08:50:22', 'Of Human Bondage', 3, '../Members/8/54/DP_1616901367.jpg', 3, 287, 'She says this when encountering new arrivals to her island for the first time in her life', 'Google', 6, 'cooking', 'FBUI2198', 'ALDOUS HUXLEY', 1, '11.83', '../Members/8/54/Preview_1616901367.pdf', '2021-03-28 08:46:07', 8, '2021-03-28 08:46:07', NULL, b'1'),
 (55, 8, 6, NULL, NULL, '2021-03-28 08:50:22', ' The Rainbow', 3, '../Members/8/55/DP_1616901367.jpg', 3, 287, 'She says this when encountering new arrivals to her island for the first time in her life', 'Google', 6, 'cooking', 'FBUI2198', 'ALDOUS HUXLEY', 2, '0.00', '../Members/8/55/Preview_1616901367.pdf', '2021-03-28 08:46:07', 8, '2021-03-28 08:46:07', NULL, b'1'),
 (56, 8, 3, NULL, NULL, '2021-03-28 08:50:22', 'The Thirty-Nine Steps', 3, '../Members/8/56/DP_1616901368.jpg', 3, 287, 'She says this when encountering new arrivals to her island for the first time in her life', 'Google', 6, 'cooking', 'FBUI2198', 'ALDOUS HUXLEY', 2, '0.00', '../Members/8/56/Preview_1616901368.pdf', '2021-03-28 08:46:08', 8, '2021-03-28 08:46:08', NULL, b'1'),
 (57, 7, 3, NULL, NULL, NULL, 'title 2', 1, '../Members/7/57/DP_1616908342.jpg', 2, 32, 'des', 'free', 2, 'nanana', '1234', 'mr.rj', 2, '0.00', NULL, '2021-03-28 10:42:22', 7, '2021-03-28 10:42:22', NULL, b'0'),
@@ -873,32 +826,12 @@ ALTER TABLE `sellernotes`
   ADD CONSTRAINT `sellernotes_ibfk_7` FOREIGN KEY (`ispaid`) REFERENCES `referencedata` (`refdataid`);
 
 --
--- Constraints for table `sellernotesattachements`
---
-ALTER TABLE `sellernotesattachements`
-  ADD CONSTRAINT `sellernotesattachements_ibfk_1` FOREIGN KEY (`noteid`) REFERENCES `sellernotes` (`noteid`);
-
---
 -- Constraints for table `sellernotesreportedissues`
 --
 ALTER TABLE `sellernotesreportedissues`
   ADD CONSTRAINT `sellernotesreportedissues_ibfk_1` FOREIGN KEY (`againstdownloaderid`) REFERENCES `users` (`userid`),
   ADD CONSTRAINT `sellernotesreportedissues_ibfk_2` FOREIGN KEY (`noteid`) REFERENCES `sellernotes` (`noteid`),
   ADD CONSTRAINT `sellernotesreportedissues_ibfk_3` FOREIGN KEY (`reprotedbyid`) REFERENCES `users` (`userid`);
-
---
--- Constraints for table `sellernotesreview`
---
-ALTER TABLE `sellernotesreview`
-  ADD CONSTRAINT `sellernotesreview_ibfk_1` FOREIGN KEY (`noteid`) REFERENCES `sellernotes` (`noteid`),
-  ADD CONSTRAINT `sellernotesreview_ibfk_2` FOREIGN KEY (`reviewer_id`) REFERENCES `users` (`userid`),
-  ADD CONSTRAINT `sellernotesreview_ibfk_3` FOREIGN KEY (`againstdownloadsid`) REFERENCES `users` (`userid`);
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roleid`) REFERENCES `userroles` (`roleid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
