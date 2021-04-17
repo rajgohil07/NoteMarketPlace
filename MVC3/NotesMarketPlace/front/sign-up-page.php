@@ -78,6 +78,7 @@ if (isset($_POST['submit'])) {
 
         //userid getter
         $id = mysqli_insert_id($con);
+        $dynamic_url = "http://localhost" . dirname($_SERVER['PHP_SELF']) . "/email-checker.php?id=$id";
 
         //mail function
         require 'PHPMailer/Exception.php';
@@ -131,7 +132,7 @@ if (isset($_POST['submit'])) {
                     Simply click below for email verification.</td>
             </tr>
             <tr>
-                <td style='height: 50px;'><a href='http://localhost/NotesMarketPlace/front/email-checker.php?id=$id'><button
+                <td style='height: 50px;'><a href='$dynamic_url'><button
                 style='width: 300px;background-color: #6255a5;height: 35px;border-radius: 3px;font-size: 18px; border:transparent;text-transform: uppercase;color: #fff;'>verify
                 email address</button></a></td>
             </tr>
