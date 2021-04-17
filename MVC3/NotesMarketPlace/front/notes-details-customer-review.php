@@ -53,7 +53,7 @@ if (isset($_GET['noteid']))
         <?php
 
         //count decider
-        $review_decide = mysqli_query($con, "SELECT * from sellernotesreview where noteid=$noteid");
+        $review_decide = mysqli_query($con, "SELECT * from sellernotesreview where noteid=$noteid AND isactive=1");
         if (mysqli_num_rows($review_decide) > 0) {
 
             //if has review it will execute this block
@@ -61,7 +61,7 @@ if (isset($_GET['noteid']))
             $review_getter = mysqli_query($con, "SELECT users.firstname,users.lastname,sellernotesreview.ratings,sellernotesreview.comments,userprofile.profile_pic FROM users 
                                         LEFT JOIN sellernotesreview ON users.userid=sellernotesreview.reviewer_id 
                                         LEFT JOIN userprofile ON userprofile.userid=sellernotesreview.reviewer_id
-                                        WHERE noteid=$noteid");
+                                        WHERE noteid=$noteid AND sellernotesreview.isactive=1");
 
             while ($row = mysqli_fetch_assoc($review_getter)) {
                 $rate_counter++;
