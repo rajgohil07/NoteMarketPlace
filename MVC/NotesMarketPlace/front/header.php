@@ -10,7 +10,7 @@ if (isset($_SESSION['email'])) {
     <div class="container column-padding-remover">
         <div class="header-wrapper">
             <div class="logo-wrapper">
-                <a class="navbar-brand" href="home-page.html"><img src="images/blue-logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="home-page.php"><img src="images/blue-logo.png" alt="logo"></a>
                 <!--Mobile Open Button-->
                 <span id="mobile-nav-open-btn">&#9776;</span>
             </div>
