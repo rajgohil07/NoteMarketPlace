@@ -376,7 +376,7 @@ while ($row = mysqli_fetch_assoc($contact_us_phone_getter))
                                     <h3><?php echo $note_page ?></h3>
                                     <h3><?php echo date('D,d F Y', strtotime($pubhlished_date)); ?></h3>
                                     <?php
-                                    $star_rating = mysqli_query($con, "SELECT AVG(ratings),COUNT(ratings) FROM sellernotesreview WHERE noteid=$noteid");
+                                    $star_rating = mysqli_query($con, "SELECT AVG(ratings),COUNT(ratings) FROM sellernotesreview WHERE noteid=$noteid AND isactive=1");
                                     while ($row = mysqli_fetch_assoc($star_rating)) {
                                         $star_rating_val = $row['AVG(ratings)'];
                                         $star_rating_count = $row['COUNT(ratings)'];
