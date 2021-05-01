@@ -5,28 +5,11 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-$name_pattern = '/^[a-zA-Z ]{3,49}$/';
-
-//booleans for validation
-$mail_exist = false;
+//booleans to display mail error
 $mail_sent = false;
-$mail_check = true;
+$mail_exist = false;
 
-$fname_check = true;
-$lname_check = true;
-
-//boolean for proper Password validation 
-$upper_psd_check = true;
-$lower_psd_check = true;
-$number_psd_check = true;
-$length_check = true;
-$password_match = true;
-
-//define variable for NOT NULL 
-$firstName = "checked";
-$lastName = "checked";
-
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit_form'])) {
     $firstName = $_POST['fname'];
     $lastName = $_POST['lname'];
     $email = $_POST['email'];
@@ -36,42 +19,7 @@ if (isset($_POST['submit'])) {
     $email_checker = mysqli_query($con, "SELECT * FROM users WHERE emailid='$email'");
     $email_count = mysqli_num_rows($email_checker);
 
-    $check_fname = preg_match($name_pattern, $firstName);
-    if (!$check_fname) {
-        $fname_check = false;
-    }
-
-    $check_lname = preg_match($name_pattern, $lastName);
-    if (!$check_lname) {
-        $lname_check = false;
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $mail_check = false;
-    }
-
-    $upper_psd = preg_match('@[A-Z]@', $password);
-    if (!$upper_psd)
-        $upper_psd_check = false;
-
-    $lower_psd = preg_match('@[a-z]@', $password);
-    if (!$lower_psd)
-        $lower_psd_check = false;
-
-    $number_check = preg_match('@[0-9]@', $password);
-    if (!$number_check)
-        $number_psd_check = false;
-
-
-    if ($password != $conform_psd) {
-        $password_match = false;
-    }
-    if (strlen($password) < 6) {
-        $length_check = false;
-    }
-
-    //all booleans should be true
-    if ($email_count == 0 && $password_match && $length_check && $lname_check && $fname_check && $mail_check && $upper_psd_check && $lower_psd_check && $number_psd_check) {
+    if ($email_count == 0) {
 
         $query = "INSERT INTO users(roleid,firstname,lastname,emailid,password,isemailverified,createddate,isactive) VALUES(1,'$firstName','$lastName','$email','$password',0,NOW(),1)";
         $result = mysqli_query($con, $query);
@@ -200,101 +148,83 @@ if (isset($_POST['submit'])) {
                     <div class="col-lg-4 col-md-6 col-sm-8 col-12">
                         <!--Login form -->
                         <div id="log-in" class="signup-background">
-                            <form action="sign-up-page.php" method="POST">
+
+                            <!-- form elements -->
+                            <form id="signup_form" action="sign-up-page.php" name="signup_form_name" method="POST">
                                 <h2 class="text-center heading-login">
                                     Create an Account
                                 </h2>
                                 <p id="sign-up-p" class="text-center">
                                     Enter your details to signup
                                 </p>
+
+                                <!-- account success message -->
                                 <div id="account-success" class="text-center">
                                     <?php
                                     if ($mail_sent)
                                         echo "<span> Your account has been successfully created</span>";
                                     ?>
                                 </div>
+
+                                <!-- first name -->
                                 <div class="form-group signup-form">
                                     <label>First Name</label>
                                     <input type="text" name="fname" class="form-control signup-input" id="fname-signup"
                                         placeholder="Enter your first name">
-                                    <div class="correct-email">
-                                        <?php
-                                        if (strlen($firstName) == 0)
-                                            echo "Please enter your first name";
-                                        else  if (!$fname_check)
-                                            echo "First name should be more then 3 characters!";
-                                        ?>
-                                    </div>
                                 </div>
+
+                                <!-- last name -->
                                 <div class="form-group signup-form">
                                     <label>Last Name</label>
                                     <input type="text" name="lname" class="form-control signup-input" id="lname-signup"
                                         placeholder="Enter your last name">
-                                    <div class="correct-email">
-                                        <?php
-                                        if (strlen($lastName) == 0)
-                                            echo "Please enter your first name";
-                                        else if (!$lname_check)
-                                            echo "Last name should be more then 3 characters!";
-                                        ?>
-                                    </div>
                                 </div>
+
+                                <!-- emailid -->
                                 <div class="form-group signup-form">
                                     <label>Email</label>
                                     <input type="email" name="email" class="form-control signup-input" id="email-signup"
                                         placeholder="Enter your email address">
                                     <div class="correct-email">
                                         <?php
-                                        if ($mail_exist)
-                                            echo "Email address already exists!";
-                                        else if (!$mail_check)
-                                            echo "Please enter Valid Email address";
+                                        echo ($mail_exist) ? "Email address already exists!" : "";
                                         ?>
                                     </div>
                                 </div>
+
+                                <!-- password -->
                                 <div class="form-group signup-block signup-form">
                                     <label>Password</label>
                                     <img src="images/eye.png" toggle="#password-signup"
                                         class="pull-right toggle-password" alt="View">
                                     <input type="password" name="password" class="form-control signup-input"
                                         id="password-signup" placeholder="Enter your password">
-                                    <div class="correct-email">
-                                        <?php
-                                        if (!$length_check)
-                                            echo "The Password Length Should be more then 6 characters";
-                                        else if (!$upper_psd_check)
-                                            echo "Please enter at least one uppercase letter";
-                                        else if (!$lower_psd_check)
-                                            echo "Please enter at least one lowercase letter";
-                                        else if (!$number_psd_check)
-                                            echo "Please enter at least one numeric letter";
-                                        ?>
-                                    </div>
                                 </div>
+
+                                <!-- Confirm password -->
                                 <div class="form-group signup-block signup-form">
                                     <label>Confirm Password</label>
                                     <img src="images/eye.png" toggle="#re-password-signup"
                                         class="pull-right toggle-password" alt="View">
                                     <input type="password" name="conform_psd" class="form-control signup-input"
                                         id="re-password-signup" placeholder="Re-enter your password">
-                                    <div class="correct-email">
-                                        <?php
-                                        if (!$password_match && $length_check && $upper_psd_check && $lower_psd_check && $number_psd_check)
-                                            echo "The Password and Confirm Password doesn't match!";
-                                        ?>
-                                    </div>
                                 </div>
+
+                                <!-- sign up -->
                                 <div class="general-btn">
-                                    <button id="signup-btn" type="submit" name="submit"
-                                        class="btn btn-primary btn-block">sign
+                                    <button id="signup-btn" name="submit_form" class="btn btn-primary btn-block">sign
                                         up</button>
                                 </div>
+
+                                <!-- email sent notice -->
                                 <div class="text-center" id="sign-up">
                                     <?php
                                     if ($mail_sent) {
                                     } else
                                         echo " Already have an account?<a href='log-in-page.php' title='click to Sign up'>Login</a>";
                                     ?>
+
+                                    <!-- thanks sign up message -->
                                     <div id="thanks-signup">
                                         <?php
                                         if ($mail_sent) {
@@ -302,8 +232,11 @@ if (isset($_POST['submit'])) {
                                         }
                                         ?>
                                     </div>
+
                                 </div>
                             </form>
+                            <!-- form ends here -->
+
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-3 col-sm-2 col-0"></div>
@@ -317,6 +250,105 @@ if (isset($_POST['submit'])) {
 
     <!--bootstrap js-->
     <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- validation js -->
+    <script src="js/jquery.validate.min.js"></script>
+
+    <!-- validation additional method js -->
+    <script src="js/additional-methods.min.js"></script>
+
+    <script>
+    $.validator.setDefaults({
+        submitHandler: function() {
+            document.signup_form_name.submit();
+        }
+    });
+
+    $(function() {
+
+        $.validator.addMethod("hasUppercase", function(value, element) {
+            if (this.optional(element)) {
+                return true;
+            }
+            return /[A-Z]/.test(value);
+        }, "Must contain 1 uppercase charecter");
+
+        $.validator.addMethod("hasLowercase", function(value, element) {
+            if (this.optional(element)) {
+                return true;
+            }
+            return /[a-z]/.test(value);
+        }, "Must contain 1 lowercase charecter");
+
+        $.validator.addMethod("hasNumber", function(value, element) {
+            if (this.optional(element)) {
+                return true;
+            }
+            return /[0-9]/.test(value);
+        }, "Must contain 1 numeric charecter");
+
+        $("#signup_form").validate({
+            rules: {
+                fname: {
+                    required: true,
+                    lettersonly: true,
+                    minlength: 3,
+                },
+                lname: {
+                    required: true,
+                    lettersonly: true,
+                    minlength: 3,
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    hasUppercase: true,
+                    hasLowercase: true,
+                    hasNumber: true,
+                    minlength: 6,
+                },
+                conform_psd: {
+                    required: true,
+                    minlength: 6,
+                    equalTo: "#password-signup"
+                }
+            },
+            messages: {
+                fname: {
+                    required: "First name is required!",
+                    minlength: "First name greater then or equals to 3 charecters!",
+                    lettersonly: "Only charecters Allowed!"
+                },
+                lname: {
+                    required: "Last name is required!",
+                    minlength: "Last name greater then or equals to 3 charecters!",
+                    lettersonly: "Only charecters Allowed!"
+                },
+                email: "Please enter a valid email address",
+                password: {
+                    minlength: "The Password Length Should be more then 6 characters",
+                    required: "Password is required field",
+                },
+                conform_psd: {
+                    minlength: "The Password Length Should be more then 6 characters",
+                    required: "Confirm Password is required field",
+                    equalTo: "The Password and Confirm Password doesn't match!"
+                }
+            },
+            errorElement: "em",
+            errorPlacement: function(error, element) {
+                error.css({
+                    "font-style": "normal"
+                });
+                error.addClass("correct-email");
+                error.insertAfter(element);
+            }
+        });
+    })
+    </script>
 
     <!--Custom Script-->
     <script src="js/script.js"></script>
