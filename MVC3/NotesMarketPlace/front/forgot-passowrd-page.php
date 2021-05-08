@@ -116,10 +116,12 @@ if (isset($_POST['submit'])) {
                     <div class="col-lg-3 col-md-3 col-sm-2 col-0"></div>
                     <div class="col-lg-4 col-md-3 col-sm-2 col-1"></div>
                     <div class="col-lg-4 col-md-6 col-sm-8 col-10">
+
                         <!--Login form -->
                         <div id="log-in">
+
                             <!--Form-->
-                            <form action="forgot-passowrd-page.php" method="POST">
+                            <form method="POST" id="forgot_form_id" name="forgot_form">
                                 <h2 class="text-center">
                                     Forgot Password?
                                 </h2>
@@ -130,13 +132,6 @@ if (isset($_POST['submit'])) {
                                     <label>Email</label>
                                     <input type="email" name="email" class="form-control" id="login-email"
                                         placeholder="Enter your email">
-                                    <div class="correct-email">
-                                        <?php
-                                        if (!$account_exist) {
-                                            echo "Please Enter a Valid email address!";
-                                        }
-                                        ?>
-                                    </div>
                                 </div>
                                 <div class="general-btn">
                                     <button name="submit" id="forget-password-btn" type="submit"
@@ -151,6 +146,8 @@ if (isset($_POST['submit'])) {
                                     ?>
                                 </div>
                             </form>
+                            <!-- form ends here -->
+
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-3 col-sm-2 col-1"></div>
@@ -159,12 +156,46 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 
-
     <!--jquery js-->
     <script src="js/jquery/jquery.min.js"></script>
 
     <!--bootstrap js-->
     <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- validation js -->
+    <script src="js/jquery.validate.min.js"></script>
+
+    <script>
+    $.validator.setDefaults({
+        submitHandler: function() {
+            document.forgot_form.submit();
+        }
+    });
+
+    $(function() {
+        $("#forgot_form_id").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                email: {
+                    required: "Please enter your email first!"
+                }
+            },
+            errorElement: "em",
+            errorPlacement: function(error, element) {
+                error.css({
+                    "font-style": "normal"
+                });
+                error.addClass("correct-email");
+                error.insertAfter(element);
+            }
+        });
+    });
+    </script>
 
     <!--Custom Script-->
     <script src="js/script.js"></script>

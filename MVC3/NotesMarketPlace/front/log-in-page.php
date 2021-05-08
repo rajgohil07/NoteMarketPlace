@@ -4,7 +4,6 @@ session_start();
 
 $login_failed = false;
 $email_verified = true;
-$correct_email = true;
 $inactive = false;
 $admin_login = false;
 
@@ -53,10 +52,6 @@ if (isset($_POST['login'])) {
     //correct email
     $correct_email_checker = mysqli_query($con, "SELECT emailid FROM users WHERE emailid='$email'");
     $correct_email_count = mysqli_num_rows($correct_email_checker);
-
-    if ($correct_email_count == 0) {
-        $correct_email = false;
-    }
 
     // admin checker
     $admin_checker = mysqli_num_rows(mysqli_query($con, "SELECT 1 FROM users WHERE emailid='$email' AND password='$password' AND roleid IN (2,3)"));
@@ -112,10 +107,11 @@ if (isset($_POST['login'])) {
                     <div class="col-md-3 col-lg-3 col-0 col-sm-2 col-xl-4"></div>
                     <div class="col-md-3 col-lg-4 col-0 col-sm-2 col-xl-4"></div>
                     <div class="col-md-6 col-lg-4 col-12 col-sm-8 col-xl-4">
+
                         <!--Login form -->
                         <div id="log-in">
                             <!--Form-->
-                            <form action="log-in-page.php" method="POST">
+                            <form method="POST" id="login_form_id" name="login_form">
                                 <h2 class="text-center">
                                     Login
                                 </h2>
@@ -134,12 +130,6 @@ if (isset($_POST['login'])) {
                                         id='login-email' placeholder='Enter your email'>";
                                     }
                                     ?>
-                                    <div class="correct-email">
-                                        <?php
-                                        if (!$correct_email)
-                                            echo "Please Enter a Valid Email Address";
-                                        ?>
-                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label> <a id="forget-psd" href="forgot-passowrd-page.php"
@@ -189,6 +179,8 @@ if (isset($_POST['login'])) {
                                 </div>
                             </form>
                         </div>
+                        <!--Login form ends-->
+
                     </div>
                     <div class="col-md-3 col-lg-4 col-0 col-sm-2 col-lx-4"></div>
                 </div>
@@ -201,6 +193,41 @@ if (isset($_POST['login'])) {
 
     <!--bootstrap js-->
     <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- validation js -->
+    <script src="js/jquery.validate.min.js"></script>
+
+    <script>
+    $.validator.setDefaults({
+        submitHandler: function() {
+            document.login_form.submit();
+        }
+    });
+
+    $(function() {
+        $("#login_form_id").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: "required"
+            },
+            messages: {
+                email: "Please enter your email!",
+                password: "Please enter your account password!"
+            },
+            errorElement: "em",
+            errorPlacement: function(error, element) {
+                error.css({
+                    "font-style": "normal"
+                });
+                error.addClass("correct-email");
+                error.insertAfter(element);
+            }
+        });
+    });
+    </script>
 
     <!--Custom Script-->
     <script src="js/script.js"></script>
