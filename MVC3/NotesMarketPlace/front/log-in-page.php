@@ -214,7 +214,10 @@ if (isset($_POST['login'])) {
                 password: "required"
             },
             messages: {
-                email: "Please enter your email!",
+                email: {
+                    required: "Please enter your email!",
+                    email: "Please enter valid email address!"
+                },
                 password: "Please enter your account password!"
             },
             errorElement: "em",
